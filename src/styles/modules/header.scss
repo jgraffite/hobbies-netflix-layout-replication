@@ -1,0 +1,168 @@
+@import "../variables";
+
+header {
+    background-color: $netflix-black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    padding: 20px;
+    font-size: 1.2rem;
+    
+    .container {
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .navigation {
+        list-style-type: none;
+        display: flex;
+        width: $containers-width;
+        margin: 0 auto;
+
+        li {
+            //display: inline-block;
+
+            &:first-child {
+                margin-right: 20px;
+            }
+            
+            &:not(:first-child) {
+                margin-left: 20px;
+            }
+
+            a {
+                color: white;
+                transition: color .5s;
+
+                &:hover {
+                    color: #b3b3b3;
+                }
+            }
+        }
+
+        &__netflix-logo {
+            display: block;
+            color: $netflix-red;
+            font-family: nf-icon;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 1;
+            text-transform: none;
+            font-size: 25px;
+
+            &:before {
+                content: "\e5d0";
+            }
+        }
+    }
+
+    .top-right-toolbar {
+
+        &> ul {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            margin: 0;
+
+            &> li {
+
+                &:not(:first-child) {
+                    margin-left: 30px;
+                }
+
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .profile-button {
+            position: relative;
+
+            &__avatar {
+                display: flex;
+                align-items: center;
+
+                &:hover {
+
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &::after {
+                    display: block;
+                    font-family: "Font Awesome 6 Free";
+                    content: '\f0d7';
+                    font-weight: bold;
+                    margin-left: 10px;
+                    font-size: 10px;
+                    transition: .5s transform;
+                }
+
+            }
+
+            &:hover .profile-avatar-menu {
+                opacity: 1;
+                display: block;
+            }
+
+            .profile-avatar-menu {
+                opacity: 0;
+                display: none;
+                position: absolute;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.80);
+                width: 220px;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                padding: 10px 0px;
+                overflow: hidden;
+                transition: height 0.1s, opacity 0.3s;
+
+                li {
+                    //display: block;
+                    
+                    a {
+                        display: flex;
+                        align-items: center;
+                        font-size: 13px;
+                        line-height: 16px;
+                        padding: 5px 10px;
+                        
+                        &:hover span {
+                            text-decoration: underline;
+                        }
+
+                        img {
+                            border-radius: 3px;
+                        }
+
+                        i, img {
+                            margin-right: 10px;
+                            width: 32px;
+                            font-size: 20px;
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+
+                    &[class*="sign-out"] {
+                        border-top: 1px solid hsla(0,0%,100%,.25);;
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px 0 0;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@import "../variables";
+
+button.button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    &--primary {
+        color: $netflix-black;
+        background-color: white;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    &--secondary {
+        background-color: rgba(109, 109, 110, 0.7);
+        color: white;
+
+        &:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    &--classic {
+        padding: 0.8rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        border-radius: 6px;
+        border: none;
+
+        &.with-icon {
+            padding-left: 2rem;
+            padding-right: 2.4rem;
+        }
+
+        i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+    }
+
+    &--rounded {
+        border-radius: 50%;
+        height: 2.4vw;
+        width: 2.4vw;
+
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}
