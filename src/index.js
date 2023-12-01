@@ -1,33 +1,38 @@
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import "./style.scss";
-var $owlCarousel;
+var owlCarousels = [];
 
-const onDragged = function(e) {
-    console.log('arrastou', e);
+const onDragged = function(e, index) {
+    console.log('e', e);
     if (!e.currentTarget.dataset.refreshed) {
         e.currentTarget.dataset.refreshed = "1";
-        $owlCarousel.trigger('destroy.owl.carousel');
-        $owlCarousel = initSlider(
+        const owl = $('.owl-carousel').eq(index);
+        owl.trigger('destroy.owl.carousel');
+        owlCarousels[index] = initSlider(
+            e.target,
+            index,
             {
                 loop: true,
                 onInitialized: function() {
-                    $owlCarousel.trigger('startPosition.owl.carousel', 0);
+                    setTimeout(() => owl.trigger('next.owl.carousel'), 0);
                 }
-            }
+            },
         );
-        $owlCarousel.trigger('next.owl.carousel');
     }
 };
 
-const initSlider = function(items) {
-    return $('.owl-carousel').owlCarousel({
-        ...items,
+const initSlider = function(elem, index, options) {
+    return $(elem).owlCarousel({
+        ...options,
         items: 6,
         stagePadding: 30,
-        onDragged: onDragged,
+        onDragged: (e) => onDragged(e, index),
     });
 }
 jQuery(function() {
-    $owlCarousel = initSlider();
+    $('.owl-carousel').each(function (index, elem) {
+        owlCarousels[index] = initSlider(elem, index);
+        console.log('owlCarousels', owlCarousels);
+    });
 });

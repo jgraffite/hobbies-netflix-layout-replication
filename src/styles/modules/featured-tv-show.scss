@@ -61,4 +61,10 @@
             }
         }
     }
+
+    &__bottom-shadow {
+        //background-color: black;
+        background: linear-gradient(0deg, $netflix-black 40%, $netflix-black 50%, rgba(255,255,255,0) 100%);
+        height: 20vh;
+    }
 }
