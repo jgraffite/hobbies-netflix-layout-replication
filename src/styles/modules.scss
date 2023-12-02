@@ -2,3 +2,15 @@
 @import "modules/featured-tv-show";
 @import "modules/buttons";
 @import "modules/tv-shows-carousel.scss";
+@import "modules/mini-preview-modal.scss";
+@import "modules/preview-modal.scss";
+
+.video-quality {
+    border: 1px solid hsla(0,0%,100%,.4);
+    border-radius: 3px;
+    color: hsla(0,0%,100%,.9);
+    font-size: .7em;
+    padding: 0 0.5em;
+    white-space: nowrap;
+    width: fit-content;
+}

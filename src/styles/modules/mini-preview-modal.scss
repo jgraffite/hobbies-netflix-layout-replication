@@ -1,0 +1,69 @@
+@import "../variables";
+
+.mini-preview-modal {
+    color: white;
+
+    &__info {
+        padding: 0 10px;
+
+        &__action-buttons {
+            margin-top: 15px;
+            display: flex;
+
+            button {
+                margin-right: 5px;
+            }
+
+            &__more {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        &__show-details {
+            margin-top: 15px;
+            font-size: 16px;
+
+            &> * {
+                margin-right: 5px;
+            }
+
+            &__like-rating {
+                color: #46d369;
+                font-weight: bold;
+            }
+
+            &__maturity {
+                font-size: 16px;
+            }
+
+            &__duration {
+                color: #bcbcbc;
+            }
+
+            &__video-quality {
+                display: inline-block;
+            }
+        }
+
+        &__categories {
+            display: flex;
+            margin-top: 10px;
+
+            span {
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+
+                    &::before {
+                        color: #646464;
+                        content: "\2022";
+                        display: inline-block;
+                        padding-right: 0.5vw;
+                    }
+                }
+            }
+        }
+    }
+}
