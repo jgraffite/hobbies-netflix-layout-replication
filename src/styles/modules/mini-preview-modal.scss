@@ -2,15 +2,47 @@
 
 .mini-preview-modal {
     color: white;
+    opacity: 1;
+    position: absolute;
+    left: 50vw;
+    top: 10vh;
+    z-index: 99;
+    background-color: $netflix-black;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: scale(.7);
+    transition-property: transform, opacity, margin-top, margin-left;
+    transition-duration: .5s;
+    transition-delay: 0, .9s, 0;
+    cursor: pointer;
+    margin-top: -70px;
+    margin-left: -60px;
+
+    &.showed {
+        margin-top: -120px;
+        width: 300px;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &__video-image-box {
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
 
     &__info {
-        padding: 0 10px;
+        transition: height .75s;
+        padding: 0 20px 25px;
 
         &__action-buttons {
             margin-top: 15px;
             display: flex;
 
-            button {
+            &> div {
                 margin-right: 5px;
             }
 

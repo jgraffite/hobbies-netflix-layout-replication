@@ -38,6 +38,7 @@ const config = {
         new CopyPlugin({
             patterns: [
               { from: "./src/assets/images", to: "./assets/images" },
+              { from: "./src/assets/videos", to: "./assets/videos" },
             ],
             options: {
               concurrency: 100,

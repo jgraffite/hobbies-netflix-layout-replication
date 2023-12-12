@@ -3,12 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <title>Webpack App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header class="header">
+        <header class="header" id="header">
             <div class="container"> 
                 <nav class="navigation">
-                    <li class="navigation__netflix-logo"><a href="/browse" class="navigation__netflix-logo__a" aria-label="Netflix"></a></li>
+                    <li class="navigation__humburger-button"><a href="#" aria-label="Netflix"><i class="fa-solid fa-bars"></i></a></li>
+                    <li class="navigation__netflix-logo"><a href="$" class="navigation__netflix-logo__a" aria-label="Netflix"></a></li>
                     <li><a href="">Home</a></li>
                     <li><a href="">TV Shows</a></li>
                     <li><a href="">Movies</a></li>
@@ -18,7 +20,12 @@
                 </nav>
                 <div class="top-right-toolbar">
                     <ul class="top-right-toolbar__nav">
-                        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li class="top-right-toolbar__nav__search-box-item" id="search-box" data-expanded="0">
+                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <div class="top-right-toolbar__nav__search-box-item__input-box">
+                                <input type="text" placeholder="Titles, people, genre">
+                            </div>
+                        </li>
                         <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
                         <li class="top-right-toolbar__nav__profile-button profile-button">
                             <a href="" class="profile-button__avatar"><img src="assets/images/profile-avatar.png" alt="Avatar 1" title="Avatar 1" class="profile-button__avatar__img" /></a>
@@ -36,10 +43,199 @@
                         </li>
                     </ul>
                 </div>
-            </div>  
+            </div>
+            
+            <div class="mobile-menu" data-show="false">
+
+                <div class="mobile-menu__navigation-box">
+
+                    <div class="mobile-menu__navigation-box__avatar-menu">
+                        <div href="" class="mobile-menu__navigation-box__avatar-menu__avatar-box">
+                            <img src="assets/images/profile-avatar.png" alt="Avatar 1" title="Avatar 1" class="mobile-menu__navigation-box__avatar-menu__avatar-box__img" />
+                            <div class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar">
+                                <span>Jorge Luis Malaquias</span>
+                                <a href="" class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar__switch-profile-link">Switch Profike</a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><a href="">Account</a></li>
+                            <li><a href="">Help Center</a></li>
+                            <li><a href="">Sign Out of Netflix</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="mobile-menu__navigation-box__categories-menu">
+                        <li class="mobile-menu__navigation-box__categories-menu__category--current"><a href="">Home</a></li>
+                        <li><a href="">My List</a></li>
+                        <li><a href="">Thrillers</a></li>
+                        <li><a href="">Kids & Family</a></li>
+                        <li><a href="">Internacional Movies & TV</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
         </header>
 
-        <div class="featured-show-box" style="background-image: url(assets/images/tv-shows/bad-surgeon-bg.webp)">
+        <div class="preview-modal">
+            <div class="preview-modal__video-wrapper">
+                <div class="preview-modal__video-wrapper__placeholder" style="background-image: url(assets/images/tv-shows/criminal-code-placeholder.webp);">
+                    <img src="assets/images/tv-shows/criminal-code-placeholder.webp" class="preview-modal__video-wrapper__placeholder__img" alt="Criminal Code">
+                    <!-- <video class="jw-video jw-reset" id="video" src="assets/videos/how-to-get-away-with-murder.mp4" poster="assets/images/tv-shows/criminal-code-placeholder.webp"></video> -->
+                    <div class="preview-modal__video-wrapper__placeholder__bottom-shadow shadow"></div>
+                </div>
+                <div class="preview-modal__video-wrapper__actions">
+                    <img src="assets/images/tv-shows/criminal-code-logo.webp" alt="" class="preview-modal__video-wrapper__actions__tv-show-logo">
+                    <div class="preview-modal__video-wrapper__actions__buttons">
+                        <div class="preview-modal__video-wrapper__actions__buttons__play">
+                            <button class="button button--primary button--classic"><i class="fa-solid fa-play"></i> Play</button>
+                        </div>
+                        <div class="preview-modal__video-wrapper__actions__buttons__favorite">
+                            <div class="button-wrapper">
+                                <!-- <div class="button-wrapper__label-popover">
+                                    Add to My List
+                                </div> -->
+                                <button aria-label="Add To My List" class="button button--outline button--rounded"><i class="fa-regular fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="preview-modal__video-wrapper__actions__buttons__like">
+                            <button class="button button--outline button--rounded"><i class="fa-regular fa-thumbs-up"></i></button>
+                        </div>
+                        <div class="preview-modal__video-wrapper__actions__buttons__volume-control">
+                            <button class="button button--outline button--rounded"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-modal__show-details--little-screen">
+                <div class="container">
+                    <h2 class="preview-modal__show-details--little-screen__title">
+                        How to Get Away With Murder
+                    </h2>
+                    <div class="preview-modal__show-details--little-screen__info">
+                        <span class="preview-modal__show-details--little-screen__info__release-date">2014</span>
+                        <span class="preview-modal__show-details--little-screen__info__maturity">16</span>
+                        <span class="preview-modal__show-details--little-screen__info__duration">6 Seasons</span>
+                    </div>
+                    <button class="button button--tertiary button--basic">Play</button>
+                </div>
+            </div>
+
+            <div class="preview-modal__show-details">
+                <div class="preview-modal__show-details__details">
+                    <div class="preview-modal__show-details__details__info">
+                        <span class="preview-modal__show-details__details__info__like-rating">96% Match</span>
+                        <span class="preview-modal__show-details__details__info__year">2023</span>
+                        <span class="preview-modal__show-details__details__info__duration">6 Seasons</span>
+                        <div class="preview-modal__show-details__details__info__video-quality video-quality">HD</div>
+                    </div>
+                    <div class="preview-modal__show-details__details__maturity-description">
+                        <div class="preview-modal__show-details__details__maturity-description__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
+                        violence, sexual content, drugs
+                    </div>
+                    <div class="preview-modal__show-details__details__ranking-description">
+                        <div class="preview-modal__show-details__details__ranking-description__ranking top-ranking">TOP<br />10</div>
+                        #5 in TV Shows Today
+                    </div>
+                    <div class="preview-modal__show-details__details__description">
+                        To crack the code of an investigation into a larger-than-life robbery, federal agents need to get creative.
+                    </div>
+                </div>
+                <div class="preview-modal__show-details__credits">
+                    <div class="preview-modal__show-details__credits__row">
+                        <span>Cast:</span> <a href="javascript:voud(0)">Maeve Jinkings</a>, <a href="javascript:voud(0)">Rômulo Braga</a>, <a href="javascript:voud(0)">Thomás Aquino</a>,
+                        <a href="javascript:voud(0)">more</a>
+                    </div>
+                    <div class="preview-modal__show-details__credits__row">
+                        <span>Genre:</span> <a href="javascript:voud(0)">TV Dramas</a>, <a href="javascript:voud(0)">Brazilian</a>, <a href="javascript:voud(0)">TV Action & Adventure</a>,
+                        <a href="javascript:voud(0)">more</a>
+                    </div>
+                    <div class="preview-modal__show-details__credits__row">
+                        <span>This show is:</span> <a href="javascript:voud(0)">Exciting</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-modal__episodes">
+                <div class="preview-modal__episodes__control">
+                    <h2>Episodes</h2>
+                    <div class="preview-modal__episodes__control__select select-popup">
+                        <button aria-haspopup="true">
+                            Season 1
+                        </button>
+                        <ul>
+                            <li>Session 1 <span>(15 Episodes)</span></li>
+                            <li>Session 2 <span>(13 Episodes)</span></li>
+                            <li>Session 3 <span>(17 Episodes)</span></li>
+                            <li>Session 4 <span>(12 Episodes)</span></li>
+                            <li>Session 5 <span>(15 Episodes)</span></li>
+                            <li>Session 6 <span>(16 Episodes)</span></li>
+                            <li>Session 7 <span>(12 Episodes)</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="preview-modal__episodes__list">
+
+                    <div class="preview-modal__episodes__list__maturity-and-season-description">
+                        <h3>Season 1:</h3>
+                        <div class="preview-modal__episodes__list__maturity-and-season-description__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
+                        violence, sexual content, drugs
+                    </div>
+
+                    <div class="preview-modal__episodes__list__episode preview-modal__episodes__list__episode--current">
+                        <div class="preview-modal__episodes__list__episode__number">1</div>
+                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
+                        </div>
+                        <div class="preview-modal__episodes__list__episode__data">
+                            <div class="preview-modal__episodes__list__episode__data__title">
+                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
+                            </div>
+                            <div class="preview-modal__episodes__list__episode__data__description">
+                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview-modal__episodes__list__episode">
+                        <div class="preview-modal__episodes__list__episode__number">1</div>
+                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
+                        </div>
+                        <div class="preview-modal__episodes__list__episode__data">
+                            <div class="preview-modal__episodes__list__episode__data__title">
+                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
+                            </div>
+                            <div class="preview-modal__episodes__list__episode__data__description">
+                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview-modal__episodes__list__episode">
+                        <div class="preview-modal__episodes__list__episode__number">1</div>
+                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
+                        </div>
+                        <div class="preview-modal__episodes__list__episode__data">
+                            <div class="preview-modal__episodes__list__episode__data__title">
+                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
+                            </div>
+                            <div class="preview-modal__episodes__list__episode__data__description">
+                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-show-box" id="featured-show-box" data-video-ended="0" style="background-image: url(assets/images/tv-shows/bad-surgeon-bg.webp)">
+            <video class="jw-video jw-reset" muted autoplay id="featured-video" data-auto-play-finished="0" src="assets/videos/how-to-get-away-with-murder.mp4" poster="assets/images/tv-shows/bad-surgeon-bg.webp"></video>
             <div class="container">
                 <div class="featured-show">
                     <img src="assets/images/tv-shows/bad-surgeon.webp" alt="">
@@ -50,15 +246,16 @@
                     </div>
                 </div>
                 <div class="featured-show-box__actions-and-info">
-                    <button class="button button--outline button--rounded"><i class="fa-solid fa-volume-high"></i></button>
+                    <button class="button button--outline button--rounded volume-control" data-muted="1">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </button>
                     <div class="featured-show-box__actions-and-info__maturity-rating-box">
                         <span class="maturity-rating" style="background-color: black; color: white;">A18</span>
                     </div>
                 </div>
             </div>
-            <div class="featured-show-box__bottom-shadow">
-                
-            </div>
+            <div class="featured-show-box__bottom-shadow shadow"></div>
         </div>
 
         <div class="tv-shows-carousels-box">
@@ -74,7 +271,7 @@
                         <div class="tv-shows-carousel__slider__item">
                             <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
 
-                            <div class="tv-shows-carousel__slider__item__preview mini-preview-modal">
+                            <!-- <div class="tv-shows-carousel__slider__item__preview mini-preview-modal">
                                 <div class="mini-preview-modal__video-image-box">
                                     <img src="assets/images/tv-shows/lucifer.jpg" alt="">
                                 </div>
@@ -105,7 +302,7 @@
                                         <span>Fantasy TV</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="tv-shows-carousel__slider__item">
@@ -314,6 +511,39 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="tv-shows-carousel__slider__item__preview mini-preview-modal" id="mini-preview">
+            <div class="mini-preview-modal__video-image-box">
+                <img src="assets/images/tv-shows/lupin.jpg" alt="">
+            </div>
+            <div class="mini-preview-modal__info">
+                <div class="mini-preview-modal__info__action-buttons">
+                    <div class="preview-moda__info__action-buttons__play">
+                        <button class="button button--primary button--rounded"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="mini-preview-modal__info__action-buttons__favorite">
+                        <button class="button button--outline button--rounded"><i class="fa-regular fa-plus"></i></button>
+                    </div>
+                    <div class="mini-preview-modal__info__action-buttons__like">
+                        <button class="button button--outline button--rounded"><i class="fa-regular fa-thumbs-up"></i></button>
+                    </div>
+                    <div class="mini-preview-modal__info__action-buttons__more">
+                        <button class="button button--outline button--rounded"><i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                </div>
+                <div class="mini-preview-modal__info__show-details">
+                    <span class="mini-preview-modal__info__show-details__like-rating">96% Match</span>
+                    <div class="mini-preview-modal__info__show-details__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
+                    <span class="mini-preview-modal__info__show-details__duration">6 Seasons</span>
+                    <div class="mini-preview-modal__info__show-details__video-quality video-quality">HD</div>
+                </div>
+                <div class="mini-preview-modal__info__categories">
+                    <span>Slick</span>
+                    <span>Irrelevent</span>
+                    <span>Fantasy TV</span>
+                </div>
             </div>
         </div>
 

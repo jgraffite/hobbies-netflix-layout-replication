@@ -1,4 +1,12 @@
 $netflix-red: #e50914;
 $netflix-black: #141414;
 
-$containers-width: 95vw;
+$containers-width: 90vw;
+
+/* breakpoints */
+$xs: 'only screen and (max-width: 575px)';
+$sm: 'only screen and (min-width: 576px)';
+$md: 'only screen and (min-width: 768px)';
+$lg: 'only screen and (min-width: 992px)';
+$xlg: 'only screen and (min-width: 1200px)';
+$xxlg: 'only screen and (min-width: 1600px)';

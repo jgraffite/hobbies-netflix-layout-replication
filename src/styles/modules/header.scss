@@ -1,13 +1,28 @@
 @import "../variables";
 
 header {
-    background-color: $netflix-black;
-    position: absolute;
+    //background-color: $netflix-black;
+    position: fixed;
     top: 0;
     left: 0;
     width: calc(100% - 40px);
     padding: 20px;
     font-size: 1.2rem;
+    z-index: 99;
+    transition: background .75s;
+
+    @media #{$xs} {
+        padding: 10px;
+        background-color: black;
+    }
+
+    @media #{$lg} {
+        background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+
+        &.scrolled {
+            background: $netflix-black;
+        }
+    }
     
     .container {
         display: flex;
@@ -20,28 +35,50 @@ header {
     .navigation {
         list-style-type: none;
         display: flex;
-        width: $containers-width;
+        //width: $containers-width;
+        width: 100%;
         margin: 0 auto;
+        flex-grow: 1;
+
+        @media #{$xs} {
+            margin-left: 7px;
+            align-items: center;
+        }
 
         li {
             //display: inline-block;
-
-            &:first-child {
-                margin-right: 20px;
-            }
             
-            &:not(:first-child) {
+            &[class*="__humburger-button"] {
+                @media #{$md} {
+                    display: none;
+                }
+            }
+
+            &:not(:first-child):not([class*="__netflix-logo"]) {
                 margin-left: 20px;
+                display: none;
+
+                @media #{$md} {
+                    display: block;
+                }
             }
 
             a {
                 color: white;
                 transition: color .5s;
 
+                @media #{$xlg} {
+                    font-size: 14px;
+                }
+
                 &:hover {
                     color: #b3b3b3;
                 }
             }
+        }
+
+        &__humburger-button {
+            font-size: 24px;
         }
 
         &__netflix-logo {
@@ -54,6 +91,11 @@ header {
             line-height: 1;
             text-transform: none;
             font-size: 25px;
+            margin-right: 20px;
+
+            @media #{$xs} {
+                font-size:22px;
+            }
 
             &:before {
                 content: "\e5d0";
@@ -63,7 +105,7 @@ header {
 
     .top-right-toolbar {
 
-        &> ul {
+        &__nav {
             display: flex;
             list-style-type: none;
             align-items: center;
@@ -71,12 +113,85 @@ header {
 
             &> li {
 
-                &:not(:first-child) {
-                    margin-left: 30px;
+                &:not([class*="__search-box-item"]) {
+                    margin-left: 25px !important;
+                    
+                    @media #{$xs} {
+                        display: none;
+                    }
                 }
 
                 a {
                     color: white;
+                }
+            }
+
+            &__search-box-item {
+                transition: border .75s;
+
+                @mixin search-open {
+                    display: flex;
+                    border: 1px solid white;
+                    align-items: center;
+                    padding: 4px 7px 4px 6px;
+                    background: #000;
+
+                    [class*="__input-box"] {
+                        width: 15vw;
+                        height: fit-content;
+
+                        input {
+                            
+                        }
+                    }
+                }
+
+                @media #{$xs} {
+                    @include search-open;
+                    
+
+                    [class*="__input-box"] {
+                        min-width: 25vw !important;
+                        margin-left: 0;
+                    }
+
+                    i {
+                        display: none;
+                    }
+                }
+
+                &[data-expanded="1"] {
+                    @include search-open;
+                }
+
+                &__input-box {
+                    width: 0;
+                    height: 0;
+                    overflow: hidden;
+                    transition: width .55s;
+                    margin-left: 10px;
+
+                    input {
+                        width: 100%;
+                        display: inline-block;
+                        background: transparent;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #fff;
+                        font-size: 14px;
+                        outline: none;
+                    }
+                }
+
+                i {
+                    font-size: 22px !important;
+                }
+            }
+
+            li {
+
+                i {
+                    font-size: 20px;
                 }
             }
         }
@@ -103,6 +218,10 @@ header {
                     margin-left: 10px;
                     font-size: 10px;
                     transition: .5s transform;
+                }
+
+                img {
+                    border-radius: 4px;
                 }
 
             }

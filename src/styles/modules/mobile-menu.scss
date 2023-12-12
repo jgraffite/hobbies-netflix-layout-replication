@@ -1,0 +1,109 @@
+@import "../variables";
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #14141471;
+    height: 100%;
+    z-index: 99;
+    font-size: medium;
+    top: 52px;
+    display: none;
+    opacity: 0;
+    transition: opacity .25s;
+
+    &[data-show="true"] {
+        opacity: 1;
+        //display: block;
+
+        &> [class*="__navigation-box"] {
+            left: 0;
+        }
+    }
+
+    &__navigation-box {
+        width: 60%;
+        background-color: #000;
+        height: 100%;
+        //padding: 10px 15px;
+        position: absolute;
+        left: -100%;
+        transition: left .25s;
+
+        &> [class*="__avatar-menu"] {
+            padding: 10px 15px;
+        }
+        
+        &__categories-menu li {
+            padding: 5px 15px !important;
+        }
+
+        &__avatar-menu {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px !important;
+            margin-bottom: 10px;
+
+            &__avatar-box {
+                display: flex;
+                align-items: center;
+
+                &__img {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                &__avatar {
+                    margin-left: 10px;
+
+                    &, a {
+                        color: grey;
+                    }
+
+                    span {
+                        display: block;
+                    }
+
+                    a {
+                        display: block;
+                        font-size: .7em;
+                    }
+                }
+            }
+
+            ul {
+                margin-top: 10px !important;
+            }
+        }
+
+        &__categories-menu__category--current {
+            border-left-color: $netflix-red !important;
+
+            a {
+                color: white !important;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li, &__category {
+                //margin-bottom: 5px;
+                border-left: 2px solid transparent;
+
+                a {
+
+                    &, a {
+                        color: grey;
+                        font-weight: bold;
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

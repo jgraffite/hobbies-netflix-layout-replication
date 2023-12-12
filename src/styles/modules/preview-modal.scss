@@ -1,5 +1,402 @@
 @import "../variables";
 
 .preview-modal {
+    color: white;
+    display: none;
+    position: absolute;
+
+    @media #{$xs} {
+        position: static;
+        margin-top: 65px;
+    }
+
+    @media #{$md} {
+        width: 850px;
+        min-width: 850px;
+    }
+
+    &__video-wrapper__actions, &__show-details, &__episodes {
+        padding: 0 30px;
+
+        @media #{$xs} {
+            padding: 0 10px;
+        }
+    }
+
+    &__video-wrapper {
+        height: 130px;
+        overflow: hidden;
+
+        @media #{$md} {
+            margin-bottom: 30px;
+            height: auto;
+        }
+
+        &__placeholder {
+            height: 100%;
+
+            @media #{$xs} {
+                background-size: auto;
+                background-position: center center;
+            }
+        
+            @media #{$md} {
+                background-image: none;
+                height: 450px;
+                margin-bottom: -320px;
+            }
+
+            &__img {
+                //max-height: 100%;
+                width: 100vw;
+
+                @media #{$xs} {
+                    display: none;
+                }
+
+                @media #{$md} {
+                    width: 100%;
+                }
+            }
+
+            &__bottom-shadow {
+                //--dark-color: red;
+                --tranparency-height: 50%;
+                margin-top: -180px;
+                height: 30vh;
+                width: 100%;
+                position: relative;
+
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+
+        &__actions {
+            position: relative;
+            //margin-top: -80px;
+            margin-bottom: 50px;
+
+            @media #{$xs} {
+                display: none;
+            }
+
+            &__tv-show-logo {
+                width: 40%;
+            }
+
+            &__buttons {
+                display: flex;
+                align-items: center;
+                margin-top: 40px;
+
+                &> div {
+
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+
+                    button:not([class*="--classic"]) {
+                        padding: 20px;
+                    }
+                }
+
+                &__play button {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
     
+                &__volume-control {
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
+                        opacity: 0.4;
+                        transition: opacity .5s;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__show-details {
+        display: flex;
+        justify-content: space-between;
+
+        @media #{$xs} {
+            &:not([class*="--little-screen"]) {
+                display: none;
+            }
+        }
+
+        &--little-screen {
+            position: absolute;
+            color: #999;
+            top: 0px;
+            height: 135px;
+            background: linear-gradient(270deg, rgba(255,255,255,0) 36%, rgba(0,0,0,1) 100%);
+
+            @media #{$md} {
+                display: none;
+            }
+
+            .container {
+                width: 80%;
+                margin: 0 20px;
+            }
+
+            &__title {
+                margin: 0;
+                color: white;
+                font-size: 1.5em;
+            }
+
+            &__info {
+
+                span {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+
+            button {
+                margin-top: 5px;
+            }
+        }
+
+        &__details {
+            flex-basis: 70%;
+
+            &__info {
+                margin-top: 15px;
+                font-size: 16px;
+
+                &> * {
+                    margin-right: 5px;
+                }
+
+                &__like-rating {
+                    color: #46d369;
+                    font-weight: bold;
+                }
+
+                &__duration, &__year {
+                    color: #bcbcbc;
+                }
+
+                &__video-quality {
+                    display: inline-block;
+                }
+            }
+
+            &__maturity-description {
+                font-size: 14px;
+                margin-top: 5px;
+
+                &__maturity {
+                    padding: 4px;
+                    margin-right: 5px;
+                    font-size: 15px;
+                    letter-spacing: -2px;
+                }
+            }
+
+            &__ranking-description {
+                font-size: 20px;
+                margin-top: 15px;
+                font-weight: 500;
+
+                &__ranking {
+                    padding: 4px;
+                    margin-right: 5px;
+                }
+            }
+
+            &__description {
+                margin: 1rem 0 0.5em 0;
+                font-size: 16px;
+                line-height: 26px;
+            }
+            
+        }
+
+        &__credits {
+            flex-basis: 25%;
+
+            &__row {
+                color: white;
+                font-size: 14px;
+                line-height: 20px;
+                margin: 1em 0.5em 1em 0;
+                word-break: break-word;
+
+                span {
+                    color: #777;
+                }
+
+                a {
+                    color: white;
+
+                    &:not(:hover) {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__episodes {
+        
+        &__control {
+            display: flex;
+            justify-content: space-between;
+
+            @media #{$xs} {
+                color: #999;
+            }
+
+            &__select {
+
+                @media #{$xs} {
+                    display: none;
+                }
+
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &__list {
+
+            &__maturity-and-season-description {
+
+                @media #{$xs} {
+                    display: none;
+                }
+                
+                h3 {
+                    display: inline-block;
+                }
+
+                &__maturity {
+                    font-size: 15px;
+                    letter-spacing: -2px;
+                }
+            }
+
+            &__episode {
+                display: flex;
+                //margin-bottom: 30px;
+                border-top: 1px solid #404040;
+                padding: 30px;
+                cursor: pointer;
+
+                @media #{$xs} {
+                    align-items: flex-start;
+                    border-top: none;
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+
+                &--current {
+                    background-color: #333;
+
+                    @media #{$xs} {
+                        background-color: transparent;
+                    }
+                }
+
+                &__number {
+                    color: #d2d2d2;
+                    display: flex;
+                    flex: 0 0 7%;
+                    font-size: 1.5em;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media #{$xs} {
+                        display: none;
+                    }
+                }
+
+                &__thumb-wrapper {
+                    border-radius: 4px;
+                    flex: 0 0 18%;
+                    overflow: hidden;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media #{$xs} {
+                        flex-basis: auto;
+                        width: 33%;
+                    }
+                    
+
+                    &::after {
+                        opacity: 0;
+                        content: '\f144';
+                        font-family: "Font Awesome 6 Free";
+                        font-weight: bold;
+                        position: absolute;
+                        font-size: 4rem;
+                        transition: opacity .5s;
+                    }
+
+                    &:hover::after {
+                        opacity: 1;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &__data {
+                    flex: 0 0 70%;
+                    font-size: 1em;
+                    min-height: 100%;
+                    padding: .1em 1em 0.5em;
+
+                    @media #{$xs} {
+                        flex-basis: auto;
+                        width: 61%;
+                        color: #999;
+                    }
+
+                    &__title {
+                        width: 100%;
+                        display: flex;
+                        font-size: 1.3em;
+                        font-weight: 500;
+                        overflow-wrap: anywhere;
+                        justify-content: space-between;
+
+                        @media #{$md} {
+                            color: #fff;
+                        }
+                    }
+
+                    &__description {
+                        //padding: 0 1em 1em;
+
+                        @media #{$md} {
+                            margin-top: 10px;
+                            color: #d2d2d2;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }
