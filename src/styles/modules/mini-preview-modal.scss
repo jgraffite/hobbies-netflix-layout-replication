@@ -2,10 +2,10 @@
 
 .mini-preview-modal {
     color: white;
-    opacity: 1;
+    //opacity: 0;
     position: absolute;
-    left: 50vw;
-    top: 10vh;
+    left: -100vw;
+    top: -100vh;
     z-index: 99;
     background-color: $netflix-black;
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
@@ -13,23 +13,28 @@
     overflow: hidden;
     transform: scale(.7);
     transition-property: transform, opacity, margin-top, margin-left;
-    transition-duration: .5s;
-    transition-delay: 0, .9s, 0;
+    transition-duration: .5s, .5s, .5s, .5s;
+    transition-delay: 0, 5.9s, 0, 0;
     cursor: pointer;
     margin-top: -70px;
     margin-left: -60px;
 
+    @media #{$xs} {
+        display: none;
+    }
+
     &.showed {
         margin-top: -120px;
-        width: 300px;
+        //width: 300px;
         transform: scale(1);
-        opacity: 1;
+        //opacity: 1;
     }
 
     &__video-image-box {
 
         img {
             max-width: 100%;
+            width: 100%;
             display: block;
         }
     }
