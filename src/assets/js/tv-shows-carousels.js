@@ -22,7 +22,7 @@ export const initCarousels = () => {
                     loop: true,
                 },
             );
-            //sliders[index]?.goTo('next');
+            sliders[index]?.goTo('next');
         }, 1000);
             
     };

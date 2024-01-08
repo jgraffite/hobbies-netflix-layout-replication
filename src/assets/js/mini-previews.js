@@ -62,7 +62,8 @@ export const buildMiniPreviews = () => {
             miniPreviewbox.dataset.videoEnded = 1;
 
             timeout = setTimeout(() => {
-                miniPreviewbox.querySelector('img').src = item.querySelector('img').src.replace(/(vertical-)/g, '');
+                miniPreviewbox.querySelector('img.cover').src = item.querySelector('img').src.replace(/(vertical-)/g, '');
+                miniPreviewbox.querySelector('img.logo').src = miniPreviewbox.querySelector('img.cover').src.replace(/(thumbs)/g, 'logos').replace(/(\.jpg)/g, '.webp').replace(/(-alt)/g, '');
                 if (videoPlayerSourceType === VideoType.HTML) {
                     video().poster = item.querySelector('img').src;
                 }

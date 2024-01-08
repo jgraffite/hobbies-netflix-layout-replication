@@ -22,9 +22,10 @@ import { VideoController, VideoType } from './video-controller/video-controller'
         }, 
         () => {
             //playing
-            featuredBox.dataset.videoEnded = 0;
+            featuredBox.dataset.videoPlaying = 1;
         },
         () => {
+            featuredBox.dataset.videoPlaying = 0;
             featuredBox.dataset.videoEnded = 1;
             featuredVideo().dataset.autoPlayFinished = 1;
             setMuted(true);
