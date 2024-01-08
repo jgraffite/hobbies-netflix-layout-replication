@@ -10,7 +10,7 @@
     });
 
 
-     /**
+    /**
      * Open / Close search box
      */
     const searchBox = document.querySelector('#search-box');
@@ -21,5 +21,24 @@
         e.preventDefault();
         searchBox.dataset.expanded = "1";
         searchBox.querySelector('input').focus();
+    });
+
+
+    /**
+     * Open / Close mobile menu
+     */
+    const mobileMenuButton = document.querySelector('#mobile-menu-button-toggle');
+    const mobileMenu = document.querySelector('#mobile-menu');
+
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            mobileMenu.dataset.show = 'false';
+        }
+    })
+
+    mobileMenuButton.addEventListener('click', () => {
+        const dataShow = mobileMenu.dataset.show;
+
+        mobileMenu.dataset.show = (dataShow === 'true') ? 'false' : 'true';
     })
 })();

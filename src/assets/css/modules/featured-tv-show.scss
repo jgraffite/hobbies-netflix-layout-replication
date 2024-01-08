@@ -1,0 +1,135 @@
+@import "../variables";
+
+.featured-show-box {
+    background: center top;
+    margin-bottom: 40px;
+    background-size: cover;
+    height: 56.25vw;
+    position: relative;
+
+    @media #{$alt-md}{
+        display: none;
+    }
+
+    &[data-video-ended="1"] {
+        video, iframe {
+            //display: none;
+            opacity: 0;
+        }
+    }
+
+    &[data-video-ended="0"] {
+        .featured-show {
+            width: 25%;
+
+            [class*="__excerpt"] {
+                margin-top: -50px;
+                //height: 0;
+                opacity: 0;
+            }
+        }
+    }
+
+    &__video-protector {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: transparent;
+        z-index: 1;
+    }
+
+    video, iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 1;
+        transition: opacity .5s;
+        top: -60px;
+    }
+
+    .container {
+        //display: flex;
+        //align-items: center;
+        height: 90%;
+    }
+
+    .featured-show {
+        width: 35%;
+        position: absolute;
+        bottom: 35%;
+        z-index: 2;
+        transition: width 1s;
+
+        img {
+            max-width: 100%;
+        }
+
+        &__excerpt {
+            margin-top: 10px;
+            color: white;
+            overflow: hidden;
+            height: fit-content;
+            opacity: 1;
+            transition: opacity 1s, margin-top 1s;
+            transition-delay: 0s, 0s;
+        }
+
+        &__buttons {
+            display: flex;
+            margin-top: 20px;
+
+            button {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__actions-and-info {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        bottom: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+
+            &[data-muted="0"] {
+                .fa-volume-high {
+                    display: block;
+                }
+                .fa-volume-xmark {
+                    display: none;
+                }
+            }
+
+            &[data-muted="1"] {
+                .fa-volume-high {
+                    display: none;
+                }
+                .fa-volume-xmark {
+                    display: block;
+                }
+            }
+        }
+
+        &__maturity-rating-box {
+            background-color: rgba(51,51,51,.6);
+            border: 3px #dcdcdc;
+            border-left-style: solid;
+            padding: 2px 35px 2px 15px;
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+    }
+
+    &__bottom-shadow {
+        //background-color: black;
+        height: 21vh;
+        position: relative;
+        z-index: 2;
+        margin-top: -20px;
+    }
+}

@@ -1,8 +1,35 @@
+import { VideoController, VideoType } from './video-controller/video-controller';
 
 (() => {
     const featuredBox = document.querySelector('#featured-show-box');
-    const featuredVideo = document.querySelector('#featured-video');
     const volumeControl = featuredBox.querySelector('.volume-control');
+    const featuredVideo = () => document.querySelector('#featured-video');
+    const videoPlayerSourceType = featuredVideo().tagName === 'VIDEO' ? VideoType.HTML : VideoType.YOUTUBE;
+
+    VideoController.loadYoutubeApi();
+
+    if (videoPlayerSourceType === VideoType.YOUTUBE) {
+        featuredBox.dataset.videoEnded = 1;
+    }
+    
+    const videoController = new VideoController(
+        videoPlayerSourceType,
+        'featured-video',
+        () => {
+            videoController.loadVideoById(featuredVideo().dataset.videoId);
+            videoController.muteVideo();
+            videoController.playVideo();
+        }, 
+        () => {
+            //playing
+            featuredBox.dataset.videoEnded = 0;
+        },
+        () => {
+            featuredBox.dataset.videoEnded = 1;
+            featuredVideo().dataset.autoPlayFinished = 1;
+            setMuted(true);
+        }
+    );
 
     function isInViewport(el, offsetH = 0) {
         const rect = el.getBoundingClientRect();
@@ -20,8 +47,10 @@
             muted = Number(!Boolean(Number(volumeControl.dataset.muted)));
         }
 
-        volumeControl.dataset.muted = muted ? "1" : "0";
-        featuredVideo.muted = muted;
+        const success = muted ? videoController.muteVideo() : videoController.unMuteVideo();
+        if (success) {
+            volumeControl.dataset.muted = muted ? "1" : "0";
+        }
     }
 
     const toggleMuted = () => {
@@ -29,29 +58,22 @@
     }
 
     volumeControl.addEventListener('click', (e) => {
-        featuredVideo.play();
+        videoController.playVideo();
         toggleMuted();
-        featuredVideo.volume = 1;
-    });
-
-    featuredVideo.addEventListener('play', () => {
-        featuredBox.dataset.videoEnded = 0;
-    });
-
-    featuredVideo.addEventListener('ended', () => {
-        featuredBox.dataset.videoEnded = 1;
-        featuredVideo.dataset.autoPlayFinished = 1;
-        setMuted(true);
     });
     
     window.addEventListener('scroll', (e) => {
-        if (featuredVideo.dataset.autoPlayFinished === "1")
+
+        if (!featuredVideo()) {
+            return false;
+        }
+
+        if (featuredVideo().dataset.autoPlayFinished === "1")
             return;
 
-        isInViewport(featuredVideo) ?
-            featuredVideo.play()
+        isInViewport(featuredVideo()) ?
+            videoController.playVideo()
             :
-            featuredVideo.pause();
+            videoController.pauseVideo();
     });
-
 })();

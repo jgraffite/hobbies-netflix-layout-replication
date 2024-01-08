@@ -1,536 +1,734 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Webpack App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <header class="header" id="header">
-            <div class="container"> 
-                <nav class="navigation">
-                    <li class="navigation__humburger-button"><a href="#" aria-label="Netflix"><i class="fa-solid fa-bars"></i></a></li>
-                    <li class="navigation__netflix-logo"><a href="$" class="navigation__netflix-logo__a" aria-label="Netflix"></a></li>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">TV Shows</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">New & Popular</a></li>
-                    <li><a href="">My List</a></li>
-                    <li><a href="">Brownse by Languages</a></li>
-                </nav>
-                <div class="top-right-toolbar">
-                    <ul class="top-right-toolbar__nav">
-                        <li class="top-right-toolbar__nav__search-box-item" id="search-box" data-expanded="0">
-                            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <div class="top-right-toolbar__nav__search-box-item__input-box">
-                                <input type="text" placeholder="Titles, people, genre">
-                            </div>
-                        </li>
-                        <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
-                        <li class="top-right-toolbar__nav__profile-button profile-button">
-                            <a href="" class="profile-button__avatar"><img src="assets/images/profile-avatar.png" alt="Avatar 1" title="Avatar 1" class="profile-button__avatar__img" /></a>
 
-                            <ul class="profile-avatar-menu">
-                                <li><a href=""><img src="assets/images/profile-avatar.png" class="profile-button__avatar__img" alt="Avatar" /> <span>Extra Perfil 1</span></a></li>
-                                <li><a href=""><img src="assets/images/profile-avatar.png" class="profile-button__avatar__img" alt="Avatar" /> <span>Extra Perfil 1</span></a></li>
-                                <li><a href=""><i class="fa-solid fa-pencil"></i> <span></span>Manage Profile</a></li>
-                                <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Exit Profile</span></a></li>
-                                <li><a href=""><i class="fa-solid fa-right-left"></i> <span>Transfer Profile</span></a></li>
-                                <li><a href=""><i class="fa-regular fa-user"></i> <span>Account</span></a></li>
-                                <li><a href=""><i class="fa-regular fa-circle-question"></i> <span>Help Center</span></a></li>
-                                <li class="profile-avatar-menu__sign-out"><a href=""><span>Sign out of Netflix</span></a></li>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mobile-menu" data-show="false">
+<head>
+    <meta charset="utf-8" />
+    <title>Netflix - Based Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico">
+</head>
 
-                <div class="mobile-menu__navigation-box">
-
-                    <div class="mobile-menu__navigation-box__avatar-menu">
-                        <div href="" class="mobile-menu__navigation-box__avatar-menu__avatar-box">
-                            <img src="assets/images/profile-avatar.png" alt="Avatar 1" title="Avatar 1" class="mobile-menu__navigation-box__avatar-menu__avatar-box__img" />
-                            <div class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar">
-                                <span>Jorge Luis Malaquias</span>
-                                <a href="" class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar__switch-profile-link">Switch Profike</a>
-                            </div>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navigation">
+                <li class="navigation__humburger-button"><a href="#" aria-label="Netflix"
+                        id="mobile-menu-button-toggle"><i class="fa-solid fa-bars"></i></a></li>
+                <li class="navigation__netflix-logo"><a href="$" class="navigation__netflix-logo__a"
+                        aria-label="Netflix"></a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">TV Shows</a></li>
+                <li><a href="">Movies</a></li>
+                <li><a href="">New & Popular</a></li>
+                <li><a href="">My List</a></li>
+                <li><a href="">Browse by Languages</a></li>
+            </nav>
+            <div class="top-right-toolbar">
+                <ul class="top-right-toolbar__nav">
+                    <li class="top-right-toolbar__nav__search-box-item" id="search-box" data-expanded="0">
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <div class="top-right-toolbar__nav__search-box-item__input-box">
+                            <input type="text" placeholder="Titles, people, genre">
                         </div>
-                        <ul>
-                            <li><a href="">Account</a></li>
-                            <li><a href="">Help Center</a></li>
-                            <li><a href="">Sign Out of Netflix</a></li>
-                        </ul>
+                    </li>
+                    <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
+                    <li class="top-right-toolbar__nav__profile-button profile-button">
+                        <a href="" class="profile-button__avatar"><img src="assets/images/profile-avatar.png"
+                                alt="Avatar 1" title="Avatar 1" class="profile-button__avatar__img" /></a>
+
+                        <ul class="profile-avatar-menu">
+                            <li><a href=""><img src="assets/images/profile-avatar.png"
+                                        class="profile-button__avatar__img" alt="Avatar" /> <span>Extra Perfil
+                                        1</span></a></li>
+                            <li><a href=""><img src="assets/images/profile-avatar.png"
+                                        class="profile-button__avatar__img" alt="Avatar" /> <span>Extra Perfil
+                                        1</span></a></li>
+                            <li><a href=""><i class="fa-solid fa-pencil"></i> <span></span>Manage Profile</a></li>
+                            <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Exit
+                                        Profile</span></a></li>
+                            <li><a href=""><i class="fa-solid fa-right-left"></i> <span>Transfer Profile</span></a></li>
+                            <li><a href=""><i class="fa-regular fa-user"></i> <span>Account</span></a></li>
+                            <li><a href=""><i class="fa-regular fa-circle-question"></i> <span>Help Center</span></a>
+                            </li>
+                            <li class="profile-avatar-menu__sign-out"><a href=""><span>Sign out of Netflix</span></a>
+                            </li>
+            </div>
+            </li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" data-show="false">
+
+            <div class="mobile-menu__navigation-box">
+
+                <div class="mobile-menu__navigation-box__avatar-menu">
+                    <div href="" class="mobile-menu__navigation-box__avatar-menu__avatar-box">
+                        <img src="assets/images/profile-avatar.png" alt="Avatar 1" title="Avatar 1"
+                            class="mobile-menu__navigation-box__avatar-menu__avatar-box__img" />
+                        <div class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar">
+                            <span>Jorge Luis Malaquias</span>
+                            <a href=""
+                                class="mobile-menu__navigation-box__avatar-menu__avatar-box__avatar__switch-profile-link">Switch
+                                Profike</a>
+                        </div>
                     </div>
-
-                    <ul class="mobile-menu__navigation-box__categories-menu">
-                        <li class="mobile-menu__navigation-box__categories-menu__category--current"><a href="">Home</a></li>
-                        <li><a href="">My List</a></li>
-                        <li><a href="">Thrillers</a></li>
-                        <li><a href="">Kids & Family</a></li>
-                        <li><a href="">Internacional Movies & TV</a></li>
+                    <ul>
+                        <li><a href="">Account</a></li>
+                        <li><a href="">Help Center</a></li>
+                        <li><a href="">Sign Out of Netflix</a></li>
                     </ul>
-
                 </div>
+
+                <ul class="mobile-menu__navigation-box__categories-menu">
+                    <li class="mobile-menu__navigation-box__categories-menu__category--current"><a href="">Home</a></li>
+                    <li><a href="">My List</a></li>
+                    <li><a href="">Thrillers</a></li>
+                    <li><a href="">Kids & Family</a></li>
+                    <li><a href="">Internacional Movies & TV</a></li>
+                </ul>
 
             </div>
-        </header>
 
-        <div class="preview-modal">
-            <div class="preview-modal__video-wrapper">
-                <div class="preview-modal__video-wrapper__placeholder" style="background-image: url(assets/images/tv-shows/criminal-code-placeholder.webp);">
-                    <img src="assets/images/tv-shows/criminal-code-placeholder.webp" class="preview-modal__video-wrapper__placeholder__img" alt="Criminal Code">
-                    <!-- <video class="jw-video jw-reset" id="video" src="assets/videos/how-to-get-away-with-murder.mp4" poster="assets/images/tv-shows/criminal-code-placeholder.webp"></video> -->
-                    <div class="preview-modal__video-wrapper__placeholder__bottom-shadow shadow"></div>
-                </div>
-                <div class="preview-modal__video-wrapper__actions">
-                    <img src="assets/images/tv-shows/criminal-code-logo.webp" alt="" class="preview-modal__video-wrapper__actions__tv-show-logo">
-                    <div class="preview-modal__video-wrapper__actions__buttons">
-                        <div class="preview-modal__video-wrapper__actions__buttons__play">
-                            <button class="button button--primary button--classic"><i class="fa-solid fa-play"></i> Play</button>
-                        </div>
-                        <div class="preview-modal__video-wrapper__actions__buttons__favorite">
-                            <div class="button-wrapper">
-                                <!-- <div class="button-wrapper__label-popover">
+        </div>
+    </header>
+
+    <div class="preview-modal">
+        <div class="preview-modal__video-wrapper">
+            <div class="preview-modal__video-wrapper__placeholder"
+                style="background-image: url(assets/images/tv-shows/criminal-code-placeholder.webp);">
+                <img src="assets/images/tv-shows/criminal-code-placeholder.webp"
+                    class="preview-modal__video-wrapper__placeholder__img" alt="Criminal Code">
+                <!-- <video class="jw-video jw-reset" id="video" src="assets/videos/how-to-get-away-with-murder.mp4" poster="assets/images/tv-shows/criminal-code-placeholder.webp"></video> -->
+                <div class="preview-modal__video-wrapper__placeholder__bottom-shadow shadow"></div>
+            </div>
+            <div class="preview-modal__video-wrapper__actions">
+                <img src="assets/images/tv-shows/criminal-code-logo.webp" alt=""
+                    class="preview-modal__video-wrapper__actions__tv-show-logo">
+                <div class="preview-modal__video-wrapper__actions__buttons">
+                    <div class="preview-modal__video-wrapper__actions__buttons__play">
+                        <button class="button button--primary button--classic"><i class="fa-solid fa-play"></i>
+                            Play</button>
+                    </div>
+                    <div class="preview-modal__video-wrapper__actions__buttons__favorite">
+                        <div class="button-wrapper">
+                            <!-- <div class="button-wrapper__label-popover">
                                     Add to My List
                                 </div> -->
-                                <button aria-label="Add To My List" class="button button--outline button--rounded"><i class="fa-regular fa-plus"></i></button>
-                            </div>
+                            <button aria-label="Add To My List" class="button button--outline button--rounded"><i
+                                    class="fa-regular fa-plus"></i></button>
                         </div>
-                        <div class="preview-modal__video-wrapper__actions__buttons__like">
-                            <button class="button button--outline button--rounded"><i class="fa-regular fa-thumbs-up"></i></button>
-                        </div>
-                        <div class="preview-modal__video-wrapper__actions__buttons__volume-control">
-                            <button class="button button--outline button--rounded"><i class="fa-solid fa-volume-high"></i></button>
-                        </div>
+                    </div>
+                    <div class="preview-modal__video-wrapper__actions__buttons__like">
+                        <button class="button button--outline button--rounded"><i
+                                class="fa-regular fa-thumbs-up"></i></button>
+                    </div>
+                    <div class="preview-modal__video-wrapper__actions__buttons__volume-control">
+                        <button class="button button--outline button--rounded"><i
+                                class="fa-solid fa-volume-high"></i></button>
                     </div>
                 </div>
             </div>
-            <div class="preview-modal__show-details--little-screen">
-                <div class="container">
-                    <h2 class="preview-modal__show-details--little-screen__title">
-                        How to Get Away With Murder
-                    </h2>
-                    <div class="preview-modal__show-details--little-screen__info">
-                        <span class="preview-modal__show-details--little-screen__info__release-date">2014</span>
-                        <span class="preview-modal__show-details--little-screen__info__maturity">16</span>
-                        <span class="preview-modal__show-details--little-screen__info__duration">6 Seasons</span>
-                    </div>
-                    <button class="button button--tertiary button--basic">Play</button>
+        </div>
+        <div class="preview-modal__show-details--little-screen">
+            <div class="container">
+                <h2 class="preview-modal__show-details--little-screen__title">
+                    How to Get Away With Murder
+                </h2>
+                <div class="preview-modal__show-details--little-screen__info">
+                    <span class="preview-modal__show-details--little-screen__info__release-date">2014</span>
+                    <span class="preview-modal__show-details--little-screen__info__maturity">16</span>
+                    <span class="preview-modal__show-details--little-screen__info__duration">6 Seasons</span>
+                </div>
+                <button class="button button--tertiary button--basic">Play</button>
+            </div>
+        </div>
+
+        <div class="preview-modal__show-details">
+            <div class="preview-modal__show-details__details">
+                <div class="preview-modal__show-details__details__info">
+                    <span class="preview-modal__show-details__details__info__like-rating">96% Match</span>
+                    <span class="preview-modal__show-details__details__info__year">2023</span>
+                    <span class="preview-modal__show-details__details__info__duration">6 Seasons</span>
+                    <div class="preview-modal__show-details__details__info__video-quality video-quality">HD</div>
+                </div>
+                <div class="preview-modal__show-details__details__maturity-description">
+                    <div class="preview-modal__show-details__details__maturity-description__maturity maturity-rating"
+                        style="background-color: orange; color: white;">A18</div>
+                    violence, sexual content, drugs
+                </div>
+                <div class="preview-modal__show-details__details__ranking-description">
+                    <div class="preview-modal__show-details__details__ranking-description__ranking top-ranking">
+                        TOP<br />10</div>
+                    #5 in TV Shows Today
+                </div>
+                <div class="preview-modal__show-details__details__description">
+                    To crack the code of an investigation into a larger-than-life robbery, federal agents need to get
+                    creative.
                 </div>
             </div>
-
-            <div class="preview-modal__show-details">
-                <div class="preview-modal__show-details__details">
-                    <div class="preview-modal__show-details__details__info">
-                        <span class="preview-modal__show-details__details__info__like-rating">96% Match</span>
-                        <span class="preview-modal__show-details__details__info__year">2023</span>
-                        <span class="preview-modal__show-details__details__info__duration">6 Seasons</span>
-                        <div class="preview-modal__show-details__details__info__video-quality video-quality">HD</div>
-                    </div>
-                    <div class="preview-modal__show-details__details__maturity-description">
-                        <div class="preview-modal__show-details__details__maturity-description__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
-                        violence, sexual content, drugs
-                    </div>
-                    <div class="preview-modal__show-details__details__ranking-description">
-                        <div class="preview-modal__show-details__details__ranking-description__ranking top-ranking">TOP<br />10</div>
-                        #5 in TV Shows Today
-                    </div>
-                    <div class="preview-modal__show-details__details__description">
-                        To crack the code of an investigation into a larger-than-life robbery, federal agents need to get creative.
-                    </div>
+            <div class="preview-modal__show-details__credits">
+                <div class="preview-modal__show-details__credits__row">
+                    <span>Cast:</span> <a href="javascript:voud(0)">Maeve Jinkings</a>, <a
+                        href="javascript:voud(0)">Rômulo Braga</a>, <a href="javascript:voud(0)">Thomás Aquino</a>,
+                    <a href="javascript:voud(0)">more</a>
                 </div>
-                <div class="preview-modal__show-details__credits">
-                    <div class="preview-modal__show-details__credits__row">
-                        <span>Cast:</span> <a href="javascript:voud(0)">Maeve Jinkings</a>, <a href="javascript:voud(0)">Rômulo Braga</a>, <a href="javascript:voud(0)">Thomás Aquino</a>,
-                        <a href="javascript:voud(0)">more</a>
-                    </div>
-                    <div class="preview-modal__show-details__credits__row">
-                        <span>Genre:</span> <a href="javascript:voud(0)">TV Dramas</a>, <a href="javascript:voud(0)">Brazilian</a>, <a href="javascript:voud(0)">TV Action & Adventure</a>,
-                        <a href="javascript:voud(0)">more</a>
-                    </div>
-                    <div class="preview-modal__show-details__credits__row">
-                        <span>This show is:</span> <a href="javascript:voud(0)">Exciting</a>
-                    </div>
+                <div class="preview-modal__show-details__credits__row">
+                    <span>Genre:</span> <a href="javascript:voud(0)">TV Dramas</a>, <a
+                        href="javascript:voud(0)">Brazilian</a>, <a href="javascript:voud(0)">TV Action & Adventure</a>,
+                    <a href="javascript:voud(0)">more</a>
                 </div>
-            </div>
-
-            <div class="preview-modal__episodes">
-                <div class="preview-modal__episodes__control">
-                    <h2>Episodes</h2>
-                    <div class="preview-modal__episodes__control__select select-popup">
-                        <button aria-haspopup="true">
-                            Season 1
-                        </button>
-                        <ul>
-                            <li>Session 1 <span>(15 Episodes)</span></li>
-                            <li>Session 2 <span>(13 Episodes)</span></li>
-                            <li>Session 3 <span>(17 Episodes)</span></li>
-                            <li>Session 4 <span>(12 Episodes)</span></li>
-                            <li>Session 5 <span>(15 Episodes)</span></li>
-                            <li>Session 6 <span>(16 Episodes)</span></li>
-                            <li>Session 7 <span>(12 Episodes)</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="preview-modal__episodes__list">
-
-                    <div class="preview-modal__episodes__list__maturity-and-season-description">
-                        <h3>Season 1:</h3>
-                        <div class="preview-modal__episodes__list__maturity-and-season-description__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
-                        violence, sexual content, drugs
-                    </div>
-
-                    <div class="preview-modal__episodes__list__episode preview-modal__episodes__list__episode--current">
-                        <div class="preview-modal__episodes__list__episode__number">1</div>
-                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
-                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
-                        </div>
-                        <div class="preview-modal__episodes__list__episode__data">
-                            <div class="preview-modal__episodes__list__episode__data__title">
-                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
-                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
-                            </div>
-                            <div class="preview-modal__episodes__list__episode__data__description">
-                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="preview-modal__episodes__list__episode">
-                        <div class="preview-modal__episodes__list__episode__number">1</div>
-                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
-                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
-                        </div>
-                        <div class="preview-modal__episodes__list__episode__data">
-                            <div class="preview-modal__episodes__list__episode__data__title">
-                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
-                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
-                            </div>
-                            <div class="preview-modal__episodes__list__episode__data__description">
-                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="preview-modal__episodes__list__episode">
-                        <div class="preview-modal__episodes__list__episode__number">1</div>
-                        <div class="preview-modal__episodes__list__episode__thumb-wrapper">
-                            <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
-                        </div>
-                        <div class="preview-modal__episodes__list__episode__data">
-                            <div class="preview-modal__episodes__list__episode__data__title">
-                                <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
-                                <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
-                            </div>
-                            <div class="preview-modal__episodes__list__episode__data__description">
-                                A tough criminal law professor challenges her brightest students to solve thorny cases, but five scholars soon learn the high price of impressing her.
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="preview-modal__show-details__credits__row">
+                    <span>This show is:</span> <a href="javascript:voud(0)">Exciting</a>
                 </div>
             </div>
         </div>
 
-        <div class="featured-show-box" id="featured-show-box" data-video-ended="0" style="background-image: url(assets/images/tv-shows/bad-surgeon-bg.webp)">
-            <video class="jw-video jw-reset" muted autoplay id="featured-video" data-auto-play-finished="0" src="assets/videos/how-to-get-away-with-murder.mp4" poster="assets/images/tv-shows/bad-surgeon-bg.webp"></video>
-            <div class="container">
-                <div class="featured-show">
-                    <img src="assets/images/tv-shows/bad-surgeon.webp" alt="">
-                    <div class="featured-show__excerpt">Dr. Paolo Macchiarini is world famous for his revolutionary stem cell-infused windpipe transplants. There's just one problem: His patients keep dying.</div>
-                    <div class="featured-show__buttons">
-                        <button class="button button--primary button--classic with-icon"><i class="fa-solid fa-play"></i> Play</button>
-                        <button class="button button--secondary button--classic with-icon"><i class="fa-solid fa-circle-info"></i> More Info</button>
-                    </div>
-                </div>
-                <div class="featured-show-box__actions-and-info">
-                    <button class="button button--outline button--rounded volume-control" data-muted="1">
-                        <i class="fa-solid fa-volume-high"></i>
-                        <i class="fa-solid fa-volume-xmark"></i>
+        <div class="preview-modal__episodes">
+            <div class="preview-modal__episodes__control">
+                <h2>Episodes</h2>
+                <div class="preview-modal__episodes__control__select select-popup">
+                    <button aria-haspopup="true">
+                        Season 1
                     </button>
-                    <div class="featured-show-box__actions-and-info__maturity-rating-box">
-                        <span class="maturity-rating" style="background-color: black; color: white;">A18</span>
-                    </div>
+                    <ul>
+                        <li>Session 1 <span>(15 Episodes)</span></li>
+                        <li>Session 2 <span>(13 Episodes)</span></li>
+                        <li>Session 3 <span>(17 Episodes)</span></li>
+                        <li>Session 4 <span>(12 Episodes)</span></li>
+                        <li>Session 5 <span>(15 Episodes)</span></li>
+                        <li>Session 6 <span>(16 Episodes)</span></li>
+                        <li>Session 7 <span>(12 Episodes)</span></li>
+                    </ul>
                 </div>
             </div>
-            <div class="featured-show-box__bottom-shadow shadow"></div>
-        </div>
+            <div class="preview-modal__episodes__list">
 
-        <div class="tv-shows-carousels-box">
-            <div class="container">
-                
-                <div class="tv-shows-carousel">
-                    <div class="tv-shows-carousel__title-box">
-                        <h2>Popular on Netflix</h2>
-                        <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
-                        <i class="fa-solid fa-chevron-right"></i>
+                <div class="preview-modal__episodes__list__maturity-and-season-description">
+                    <h3>Season 1:</h3>
+                    <div class="preview-modal__episodes__list__maturity-and-season-description__maturity maturity-rating"
+                        style="background-color: orange; color: white;">A18</div>
+                    violence, sexual content, drugs
+                </div>
+
+                <div class="preview-modal__episodes__list__episode preview-modal__episodes__list__episode--current">
+                    <div class="preview-modal__episodes__list__episode__number">1</div>
+                    <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                        <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
                     </div>
-                    <div class="tv-shows-carousel__slider-wrapper">
-                        <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
+                    <div class="preview-modal__episodes__list__episode__data">
+                        <div class="preview-modal__episodes__list__episode__data__title">
+                            <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                            <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
                         </div>
-                        <button class="tv-shows-carousel__slider-wrapper__nav-next"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="preview-modal__episodes__list__episode__data__description">
+                            A tough criminal law professor challenges her brightest students to solve thorny cases, but
+                            five scholars soon learn the high price of impressing her.
+                        </div>
                     </div>
                 </div>
 
-                <div class="tv-shows-carousel">
-                    <div class="tv-shows-carousel__title-box">
-                        <h2>Popular on Netflix</h2>
-                        <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
-                        <i class="fa-solid fa-chevron-right"></i>
+                <div class="preview-modal__episodes__list__episode">
+                    <div class="preview-modal__episodes__list__episode__number">1</div>
+                    <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                        <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
                     </div>
-                    <div class="tv-shows-carousel__slider-wrapper">
-                        <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
+                    <div class="preview-modal__episodes__list__episode__data">
+                        <div class="preview-modal__episodes__list__episode__data__title">
+                            <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                            <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
                         </div>
-                        <button class="tv-shows-carousel__slider-wrapper__nav-next"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="preview-modal__episodes__list__episode__data__description">
+                            A tough criminal law professor challenges her brightest students to solve thorny cases, but
+                            five scholars soon learn the high price of impressing her.
+                        </div>
                     </div>
                 </div>
 
-                <div class="top-ranking-tv-shows-carousel">
-                    <div class="top-ranking-tv-shows-carousel__title-box">
-                        <h2>Top 10 TV Shows in Brazil Today</h2>
+                <div class="preview-modal__episodes__list__episode">
+                    <div class="preview-modal__episodes__list__episode__number">1</div>
+                    <div class="preview-modal__episodes__list__episode__thumb-wrapper">
+                        <img src="assets/images/tv-shows/episode-thumb.webp" alt="Episode Thumb">
                     </div>
-                    <div class="top-ranking-tv-shows-carousel__slider-wrapper">
-                        <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
-                            
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">1</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">2</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image" >
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">3</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">4</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">5</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">6</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">7</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">8</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">9</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item" data-ranking="10">
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">10</div>
-                                <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
-                                    <img src="assets/images/tv-shows/a-nearny-normal-family-vertical.jpg" alt="">
-                                </div>
-                            </div>
-
+                    <div class="preview-modal__episodes__list__episode__data">
+                        <div class="preview-modal__episodes__list__episode__data__title">
+                            <div class="preview-modal__episodes__list__episode__data__title__name">Pilot</div>
+                            <div class="preview-modal__episodes__list__episode__data__title__duration">44m</div>
                         </div>
-                        <button class="tv-shows-carousel__slider-wrapper__nav-next"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <div class="tv-shows-carousel">
-                    <div class="tv-shows-carousel__title-box">
-                        <h2>Popular on Netflix</h2>
-                        <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                    <div class="tv-shows-carousel__slider-wrapper">
-                        <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/criminal-code.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
-                            <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview">
-                                <img src="assets/images/tv-shows/lupin.jpg" alt="">
-                            </div>
-
+                        <div class="preview-modal__episodes__list__episode__data__description">
+                            A tough criminal law professor challenges her brightest students to solve thorny cases, but
+                            five scholars soon learn the high price of impressing her.
                         </div>
-                        <button class="tv-shows-carousel__slider-wrapper__nav-next"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
 
             </div>
         </div>
+    </div>
 
-        <div class="tv-shows-carousel__slider__item__preview mini-preview-modal" id="mini-preview">
-            <div class="mini-preview-modal__video-image-box">
-                <img src="assets/images/tv-shows/lupin.jpg" alt="">
+    <div class="featured-show-box" id="featured-show-box" data-video-ended="0"
+        style="background-image: url(assets/images/tv-shows/covers/stranger-things.jpg)">
+        <div class="featured-show-box__video-protector"></div>
+        <!-- <video class="jw-video" muted autoplay id="featured-video" data-auto-play-finished="0" src="assets/videos/stranger-things.mp4" poster="assets/images/tv-shows/covers/stranger-things.jpg"></video> -->
+        <div id="featured-video" data-video-id="sBEvEcpnG7k"></div>
+
+        <div class="container">
+            <div class="featured-show">
+                <img src="assets/images/tv-shows/stranger-things.webp" alt="">
+                <div class="featured-show__excerpt">Dr. Paolo Macchiarini is world famous for his revolutionary stem
+                    cell-infused windpipe transplants. There's just one problem: His patients keep dying.</div>
+                <div class="featured-show__buttons">
+                    <button class="button button--primary button--classic with-icon"><i class="fa-solid fa-play"></i>
+                        Play</button>
+                    <button class="button button--secondary button--classic with-icon"><i
+                            class="fa-solid fa-circle-info"></i> More Info</button>
+                </div>
             </div>
-            <div class="mini-preview-modal__info">
-                <div class="mini-preview-modal__info__action-buttons">
-                    <div class="preview-moda__info__action-buttons__play">
-                        <button class="button button--primary button--rounded"><i class="fa-solid fa-play"></i></button>
-                    </div>
-                    <div class="mini-preview-modal__info__action-buttons__favorite">
-                        <button class="button button--outline button--rounded"><i class="fa-regular fa-plus"></i></button>
-                    </div>
-                    <div class="mini-preview-modal__info__action-buttons__like">
-                        <button class="button button--outline button--rounded"><i class="fa-regular fa-thumbs-up"></i></button>
-                    </div>
-                    <div class="mini-preview-modal__info__action-buttons__more">
-                        <button class="button button--outline button--rounded"><i class="fa-solid fa-chevron-down"></i></button>
-                    </div>
-                </div>
-                <div class="mini-preview-modal__info__show-details">
-                    <span class="mini-preview-modal__info__show-details__like-rating">96% Match</span>
-                    <div class="mini-preview-modal__info__show-details__maturity maturity-rating" style="background-color: orange; color: white;">A18</div>
-                    <span class="mini-preview-modal__info__show-details__duration">6 Seasons</span>
-                    <div class="mini-preview-modal__info__show-details__video-quality video-quality">HD</div>
-                </div>
-                <div class="mini-preview-modal__info__categories">
-                    <span>Slick</span>
-                    <span>Irrelevent</span>
-                    <span>Fantasy TV</span>
+            <div class="featured-show-box__actions-and-info">
+                <button class="button button--outline button--rounded volume-control" data-muted="1">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <div class="featured-show-box__actions-and-info__maturity-rating-box">
+                    <span class="maturity-rating" style="background-color: black; color: white;">A18</span>
                 </div>
             </div>
         </div>
+        <div class="featured-show-box__bottom-shadow shadow"></div>
+    </div>
 
-        <script src="https://kit.fontawesome.com/d9ef769602.js" crossorigin="anonymous"></script>
-    </body>
-    
+    <div class="tv-shows-carousels-box">
+        <div class="container">
+
+            <div class="tv-shows-carousel">
+                <div class="tv-shows-carousel__title-box">
+                    <h2>Popular on Netflix</h2>
+                    <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="tv-shows-carousel__slider-wrapper">
+                    <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="IKtL4IW6G0I">
+                            <img src="assets/images/tv-shows/thumbs/the-blacklist.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="YtzgFRBvRy8">
+                            <img src="assets/images/tv-shows/thumbs/the-alienist.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="opY5lRFyMQk">
+                            <img src="assets/images/tv-shows/thumbs/manifest.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="zzy6wWjFONY">
+                            <img src="assets/images/tv-shows/thumbs/better-call-saul.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="RqZkit-aCTo">
+                            <img src="assets/images/tv-shows/thumbs/blindspot.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xl8zdCY-abw">
+                            <img src="assets/images/tv-shows/thumbs/narcos.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="vY0qzXi5oJg">
+                            <img src="assets/images/tv-shows/thumbs/orange-is-the-new-black.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="RqZkit-aCTo">
+                            <img src="assets/images/tv-shows/thumbs/blindspot.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xl8zdCY-abw">
+                            <img src="assets/images/tv-shows/thumbs/narcos.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="vY0qzXi5oJg">
+                            <img src="assets/images/tv-shows/thumbs/orange-is-the-new-black.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="RqZkit-aCTo">
+                            <img src="assets/images/tv-shows/thumbs/blindspot.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xl8zdCY-abw">
+                            <img src="assets/images/tv-shows/thumbs/narcos.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="vY0qzXi5oJg">
+                            <img src="assets/images/tv-shows/thumbs/orange-is-the-new-black.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                    </div>
+                    <button class="tv-shows-carousel__slider-wrapper__nav-next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="tv-shows-carousel">
+                <div class="tv-shows-carousel__title-box">
+                    <h2>Trending Now</h2>
+                    <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="tv-shows-carousel__slider-wrapper">
+                    <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="UdzM6rOC3oA">
+                            <img src="assets/images/tv-shows/thumbs/thirty-reasons-why.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="FStMMcj-RiA">
+                            <img src="assets/images/tv-shows/thumbs/young-sheldon.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="9RNHKKYJvg8">
+                            <img src="assets/images/tv-shows/thumbs/dark.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="GMwYlsMQyLQ">
+                            <img src="assets/images/tv-shows/thumbs/elite-alt.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xsODpM3Rwdg">
+                            <img src="assets/images/tv-shows/thumbs/sintonia.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="WoV4O0Jfm8U">
+                            <img src="assets/images/tv-shows/thumbs/you.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="J4LWdJHJxbs">
+                            <img src="assets/images/tv-shows/thumbs/mind-hunter.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xsODpM3Rwdg">
+                            <img src="assets/images/tv-shows/thumbs/sintonia.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="WoV4O0Jfm8U">
+                            <img src="assets/images/tv-shows/thumbs/you.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="J4LWdJHJxbs">
+                            <img src="assets/images/tv-shows/thumbs/mind-hunter.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                    </div>
+                    <button class="tv-shows-carousel__slider-wrapper__nav-next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="top-ranking-tv-shows-carousel">
+                <div class="top-ranking-tv-shows-carousel__title-box">
+                    <h2>Top 10 TV Shows in Brazil Today</h2>
+                </div>
+                <div class="top-ranking-tv-shows-carousel__slider-wrapper">
+                    <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="v1cU2p4fp7M">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">1</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/berlin.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="QvbQtARquR8">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">2</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/captains-of-the-world.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="nhC8AG8cwcc">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">3</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/fool-me-once.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="_-Kz67kea8Q">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">4</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/chicken-run.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="e9D-B35xlyw">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">5</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/the-chosen.webp" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="8SnHkOHsWfs">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">6</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/the-many.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="BhP1eYQ5Pxk">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">7</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/true-beauty.webp" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="k397HRbTtWI">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">8</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/boss-baby.webp" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="e9D-B35xlyw">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">9</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/the-chosen.webp" alt="">
+                            </div>
+                        </div>
+
+                        <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview"
+                            data-ranking="10" data-video-id="KS5E8r82l2g">
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__position">10</div>
+                            <div class="top-ranking-tv-shows-carousel__slider-wrapper__slider__item__image">
+                                <img src="assets/images/tv-shows/vertical-thumbs/hancock.webp" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="tv-shows-carousel__slider-wrapper__nav-next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="tv-shows-carousel">
+                <div class="tv-shows-carousel__title-box">
+                    <h2>Because you watched Stranger Things</h2>
+                    <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="tv-shows-carousel__slider-wrapper">
+                    <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="IKtL4IW6G0I">
+                            <img src="assets/images/tv-shows/thumbs/the-blacklist.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="YtzgFRBvRy8">
+                            <img src="assets/images/tv-shows/thumbs/the-alienist.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="opY5lRFyMQk">
+                            <img src="assets/images/tv-shows/thumbs/manifest.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="9RNHKKYJvg8">
+                            <img src="assets/images/tv-shows/thumbs/dark.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="RqZkit-aCTo">
+                            <img src="assets/images/tv-shows/thumbs/blindspot.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xl8zdCY-abw">
+                            <img src="assets/images/tv-shows/thumbs/narcos.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="vY0qzXi5oJg">
+                            <img src="assets/images/tv-shows/thumbs/orange-is-the-new-black.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="RqZkit-aCTo">
+                            <img src="assets/images/tv-shows/thumbs/blindspot.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xl8zdCY-abw">
+                            <img src="assets/images/tv-shows/thumbs/narcos.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="vY0qzXi5oJg">
+                            <img src="assets/images/tv-shows/thumbs/orange-is-the-new-black.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                    </div>
+                    <button class="tv-shows-carousel__slider-wrapper__nav-next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="tv-shows-carousel">
+                <div class="tv-shows-carousel__title-box">
+                    <h2>New Releases</h2>
+                    <a href="" class="tv-shows-carousel__title-box__see-all">Explore all</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="tv-shows-carousel__slider-wrapper">
+                    <button class="tv-shows-carousel__slider-wrapper__nav-prev"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="tv-shows-carousel__slider-wrapper__slider tv-show-carousel">
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="UdzM6rOC3oA">
+                            <img src="assets/images/tv-shows/thumbs/thirty-reasons-why.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="FStMMcj-RiA">
+                            <img src="assets/images/tv-shows/thumbs/young-sheldon.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="9RNHKKYJvg8">
+                            <img src="assets/images/tv-shows/thumbs/dark.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="GMwYlsMQyLQ">
+                            <img src="assets/images/tv-shows/thumbs/elite.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="xsODpM3Rwdg">
+                            <img src="assets/images/tv-shows/thumbs/sintonia.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="WoV4O0Jfm8U">
+                            <img src="assets/images/tv-shows/thumbs/you.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="J4LWdJHJxbs">
+                            <img src="assets/images/tv-shows/thumbs/mind-hunter.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="WoV4O0Jfm8U">
+                            <img src="assets/images/tv-shows/thumbs/you.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="VFLkMDEO-Xc">
+                            <img src="assets/images/tv-shows/thumbs/breaking-bad.webp" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="J4LWdJHJxbs">
+                            <img src="assets/images/tv-shows/thumbs/mind-hunter.jpg" alt="">
+                        </div>
+
+                        <div class="tv-shows-carousel__slider-wrapper__slider__item tv-show-mini-preview" data-video-id="Ab2YIbP5xw8">
+                            <img src="assets/images/tv-shows/thumbs/suits.webp" alt="">
+                        </div>
+
+                    </div>
+                    <button class="tv-shows-carousel__slider-wrapper__nav-next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mini-preview-modal" id="mini-preview">
+        <div class="mini-preview-modal__video-image-box">
+            <div class="mini-preview-modal__video-image-box__video-protector"></div>
+            <!-- <video class="jw-video jw-reset" muted id="mini-preview-video" data-auto-play-finished="0"
+                src="assets/videos/how-to-get-away-with-murder.mp4"
+                poster="assets/images/tv-shows/bad-surgeon-bg.webp"></video> -->
+            <div id="mini-preview-video"></div>
+            <img src="" alt="">
+            <div class="mini-preview-modal__video-image-box__volume-control volume-control" data-muted="1">
+                <button class="button button--outline button--rounded">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mini-preview-modal__info">
+            <div class="mini-preview-modal__info__action-buttons">
+                <div class="preview-moda__info__action-buttons__play">
+                    <button class="button button--primary button--rounded"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="mini-preview-modal__info__action-buttons__favorite">
+                    <button class="button button--outline button--rounded"><i class="fa-regular fa-plus"></i></button>
+                </div>
+                <div class="mini-preview-modal__info__action-buttons__like">
+                    <button class="button button--outline button--rounded"><i
+                            class="fa-regular fa-thumbs-up"></i></button>
+                </div>
+                <div class="mini-preview-modal__info__action-buttons__more">
+                    <button class="button button--outline button--rounded"><i
+                            class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+            <div class="mini-preview-modal__info__show-details">
+                <span class="mini-preview-modal__info__show-details__like-rating">96% Match</span>
+                <div class="mini-preview-modal__info__show-details__maturity maturity-rating"
+                    style="background-color: orange; color: white;">A18</div>
+                <span class="mini-preview-modal__info__show-details__duration">6 Seasons</span>
+                <div class="mini-preview-modal__info__show-details__video-quality video-quality">HD</div>
+            </div>
+            <div class="mini-preview-modal__info__categories">
+                <span>Slick</span>
+                <span>Irrelevent</span>
+                <span>Fantasy TV</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/d9ef769602.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

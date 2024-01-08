@@ -37,38 +37,39 @@ const config = {
         }),
         new CopyPlugin({
             patterns: [
-              { from: "./src/assets/images", to: "./assets/images" },
-              { from: "./src/assets/videos", to: "./assets/videos" },
+                { from: "./src/assets/images", to: "./assets/images" },
+                { from: "./src/assets/videos", to: "./assets/videos" },
             ],
             options: {
-              concurrency: 100,
+                concurrency: 100,
             },
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-          }),
+        }),
     ],
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: [stylesHandler,'css-loader'],
+                use: [stylesHandler, 'css-loader'],
             },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    stylesHandler,
+                    MiniCssExtractPlugin.loader,
+                    //stylesHandler,
                     'css-loader',
                     //'sass-loader',
                     {
                         loader: "sass-loader",
                         options: {
-                          sourceMap: true,
-                          sassOptions: {
-                            outputStyle: "compressed",
-                          },
+                            sourceMap: true,
+                            sassOptions: {
+                                outputStyle: "expanded",
+                            },
                         },
                     },
                 ],
@@ -90,8 +91,8 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-        
-        
+
+
     } else {
         config.mode = 'development';
     }
