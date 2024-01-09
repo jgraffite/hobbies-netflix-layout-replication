@@ -112,11 +112,16 @@ export const buildMiniPreviews = () => {
                 const right = (left + width);
                 const widthPassed = right - window.innerWidth;
 
-                left = left - 10;
+                //left = left - 10;
+
+                //console.log('left', left, 'rect.left', rect.left);
                 
-                if (left < 0) {
-                    left = 0;
-                }
+                // if (left < 100) {
+                //     left = 100;
+                // }
+                // if (left < rect.left) {
+                //     left = rect.left + 100;
+                // }
 
                 if (right > window.innerWidth) {
                     left -= (widthPassed * 0.5);

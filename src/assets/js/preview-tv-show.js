@@ -12,8 +12,7 @@ const videoController = new VideoController(
     videoPlayerSourceType,
     'preview-video',
     () => {
-        videoController.muteVideo();
-        videoController.playVideo();
+        
     }, 
     () => {
         previewModalBox.dataset.videoPlaying = 1;
@@ -45,6 +44,7 @@ const stopVideo = () => {
     try {
         videoController.pauseVideo();
         setMuted(true);
+        previewModalBox.dataset.videoPlaying = 0;
     } catch {
         
     }
@@ -53,9 +53,10 @@ const stopVideo = () => {
 export const openPreviewModal = (elem) => {
     document.body.classList.add('preview-modal-opened');
     previewModalWrapper.dataset.opened = "1";
+    previewModalWrapper.scrollTo({top: 0});
     previewModalBox.querySelector('img.cover').src = elem.querySelector('img').src.replace(/(vertical-)/g, '');
     previewModalBox.querySelector('img.logo').src = previewModalBox.querySelector('img.cover').src.replace(/(thumbs)/g, 'logos').replace(/(\.jpg)/g, '.webp').replace(/(-alt)/g, '');
-    videoController.loadVideoById(elem.dataset.videoId);
+    setTimeout(() => videoController.loadVideoById(elem.dataset.videoId), 1000);
     setMuted(true);
 }
 

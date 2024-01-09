@@ -10,8 +10,6 @@
     overflow: auto;
     opacity: 0;
     height: 0%;
-    transition: opacity .5s, height .1ms;
-    transition-delay: 0s, .0s;
     top: 0;
 
     @media #{$md} {
@@ -22,8 +20,6 @@
     &[data-opened="1"] {
         opacity: 1;
         height: 100%;
-        //transition: opacity .5s, height .1ms;
-        //transition-delay: 0s, .5s;
 
         .preview-modal {
             opacity: 1;
@@ -31,17 +27,10 @@
         }
     }
 
-    // &[data-opened="0"] {
-    //     opacity: 0;
-    //     height: 0%;
-    //     transition: opacity 1s, height .1ms;
-    //     transition-delay: 0s, 1s;
-
-    //     .preview-modal {
-    //         opacity: 0;
-    //         transform: scale(.8);
-    //     }
-    // }
+    &[data-opened="0"] {
+        transition: opacity .5s, height .1ms;
+        transition-delay: .5s, .5s;
+    }
 }
 .preview-modal {
     color: white;
@@ -67,16 +56,20 @@
     }
 
     &__video-wrapper__actions, &__show-details, &__episodes {
-        padding: 0 30px;
+        padding: 0 40px;
 
         @media #{$xs} {
             padding: 0 10px;
         }
     }
 
-    &[data-video-playing="0"] {
+    &:not([data-video-playing="1"]) {
         iframe {
             opacity: 0;
+        }
+
+        [class*="__tv-show-logo"] {
+            visibility: hidden;
         }
     }
 
@@ -100,7 +93,7 @@
         
             @media #{$md} {
                 background-image: none;
-                height: 450px;
+                height: 500px;
                 //margin-bottom: -320px;
                 margin-bottom: -250px;
             }
@@ -121,6 +114,8 @@
                 z-index: 1;
                 display: block;
                 top: 0;
+                transition: opacity .5s;
+                margin-top: -10px;
             }
 
             &__img {
@@ -139,7 +134,7 @@
             &__bottom-shadow {
                 //--dark-color: red;
                 --tranparency-height: 50%;
-                margin-top: -140px;
+                margin-top: -60px;
                 height: 30vh;
                 width: 100%;
                 position: relative;
@@ -153,8 +148,8 @@
 
         &__actions {
             position: relative;
-            //margin-top: -80px;
-            margin-bottom: 50px;
+            margin-top: 10px;
+            margin-bottom: 110px;
             z-index: 2;
 
             @media #{$xs} {
@@ -225,6 +220,9 @@
     &__show-details {
         display: flex;
         justify-content: space-between;
+        margin-top: -80px;
+        position: relative;
+        z-index: 2;
 
         @media #{$xs} {
             &:not([class*="--little-screen"]) {

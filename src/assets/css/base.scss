@@ -41,7 +41,7 @@ body {
 
     &.preview-modal-opened {
         @media #{$md} {
-           // overflow: hidden;
+            overflow: hidden;
         }
     }
 }
