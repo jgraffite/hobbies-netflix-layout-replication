@@ -2,10 +2,7 @@
 
 .tv-shows-carousels-box {
     position: absolute;
-    //bottom: 20px;
     width: 100%;
-    //height: fit-content;
-    //bottom: -10px;
 
     @media #{$xlg} {
         margin-top: -40vh;
@@ -32,6 +29,10 @@
 .top-ranking-tv-shows-carousel {
     position: relative;
     z-index: 3;
+
+    &:last-child {
+        margin-bottom: 120px;
+    }
 
     &:hover {
         [class*="__title-box"] i {

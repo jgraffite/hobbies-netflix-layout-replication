@@ -1,4 +1,5 @@
 import { VideoController, VideoType } from './video-controller/video-controller';
+import {openPreviewModal} from "./preview-tv-show.js";
 
 
 const miniPreviewbox = document.querySelector('#mini-preview');
@@ -47,10 +48,28 @@ const stopVideo = () => {
     }
 }
 
+const closeMiniPreviewBox = () => {
+    miniPreviewbox.dataset.videoEnded = 1;
+    miniPreviewbox.classList.remove('showed');
+    setTimeout(() => {
+        miniPreviewbox.style.top = `-100vw`;
+        miniPreviewbox.style.left = `-100vh`;
+    }, 500);
+
+    stopVideo();
+}
+
 
 export const buildMiniPreviews = () => {
     var timeout, timeout2;
     document.querySelectorAll('.tv-show-mini-preview').forEach(item => {
+
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMiniPreviewBox();
+            openPreviewModal(item);
+        });
+
         item.addEventListener('mouseover', () => {
 
             if (window.scrollY === 0) {
@@ -93,6 +112,8 @@ export const buildMiniPreviews = () => {
                 const right = (left + width);
                 const widthPassed = right - window.innerWidth;
 
+                left = left - 10;
+                
                 if (left < 0) {
                     left = 0;
                 }
@@ -117,16 +138,7 @@ export const buildMiniPreviews = () => {
         });
     });
 
-    miniPreviewbox.addEventListener('mouseleave', () => {
-        miniPreviewbox.dataset.videoEnded = 1;
-        miniPreviewbox.classList.remove('showed');
-        setTimeout(() => {
-            miniPreviewbox.style.top = `-100vw`;
-            miniPreviewbox.style.left = `-100vh`;
-        }, 500);
-
-        stopVideo();
-    });
+    miniPreviewbox.addEventListener('mouseleave', () => closeMiniPreviewBox());
 }
 
 (() => {

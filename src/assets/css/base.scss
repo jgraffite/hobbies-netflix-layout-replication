@@ -3,38 +3,50 @@
 @font-face {
     font-family: "nf-icon";
     src:
-      local("Trickster"),
-      url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.otf") format("opentype") tech(color-COLRv1),
-      url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.otf") format("opentype"),
-      url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.woff") format("woff");
-  }
+        local("Trickster"),
+        url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.otf") format("opentype") tech(color-COLRv1),
+        url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.otf") format("opentype"),
+        url("https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.woff") format("woff");
+}
 
-  * {
-    font-family: Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
-  }
+* {
+    font-family:
+        Helvetica Neue,
+        Segoe UI,
+        Roboto,
+        Ubuntu,
+        sans-serif;
+}
 
-  html, body {
+html,
+body {
     user-select: none;
 
-    @media #{$sm}{
-      font-size: 1.2vw;
+    @media #{$sm} {
+        font-size: 1.2vw;
     }
 
-    @media #{$lg}{
-      font-size: .85vw;
+    @media #{$lg} {
+        font-size: 0.85vw;
     }
 
     @media screen and (min-width: 1921px) and (orientation: landscape) {
-      font-size: 14px;
+        font-size: 14px;
     }
-  }
+}
 
-  body {
+body {
     background-color: $netflix-black;
     margin: 0;
-  }
 
-  .container {
+    &.preview-modal-opened {
+        @media #{$md} {
+           // overflow: hidden;
+        }
+    }
+}
+
+.container {
     width: $containers-width;
     margin: auto;
-  }
+}

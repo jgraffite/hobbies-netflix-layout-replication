@@ -20,12 +20,17 @@
 
     &[data-video-playing="1"] {
         .featured-show {
-            width: 25%;
+
+            img {
+                max-width: 60%;
+                transform: translate3d(0px, 60px, 0px);
+            }
 
             [class*="__excerpt"] {
-                margin-top: -50px;
+                //margin-top: -50px;
                 //height: 0;
                 opacity: 0;
+                transform: translate3d(0px, 93px, 0px);
             }
         }
     }
@@ -63,16 +68,21 @@
 
         img {
             max-width: 100%;
+            transition-duration: 1300ms;
+            transition-delay: 2000ms;
         }
 
         &__excerpt {
             margin-top: 10px;
+            font-size: 1.2vw;
             color: white;
             overflow: hidden;
             height: fit-content;
             opacity: 1;
-            transition: opacity 1s, margin-top 1s;
-            transition-delay: 3s, 3s;
+            //transition: opacity 1s, margin-top 1s;
+            //transition-delay: 3s, 3s;
+            transition-duration: 1300ms;
+            transition-delay: 2000ms;
         }
 
         &__buttons {

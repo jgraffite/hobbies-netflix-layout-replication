@@ -8,7 +8,7 @@ header {
     width: calc(100% - 40px);
     padding: 18px;
     font-size: 1.2rem;
-    z-index: 99;
+    z-index: 10;
     transition: background .75s;
 
     @media #{$xs} {
