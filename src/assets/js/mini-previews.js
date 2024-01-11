@@ -72,6 +72,14 @@ export const buildMiniPreviews = () => {
 
         item.addEventListener('mouseover', () => {
 
+            if (item.classList.contains('corner-start')) {
+                miniPreviewbox.classList.add('corner-start');
+            }
+            if (item.classList.contains('corner-end')) {
+                miniPreviewbox.classList.add('corner-end');
+            }
+
+
             if (window.scrollY === 0) {
                 return false;
             }
@@ -104,28 +112,17 @@ export const buildMiniPreviews = () => {
                 const vWidth = window.scrollX;
                 const vHeight = window.scrollY;
         
-                var left = (rect.left + vWidth);
+                var left = (rect.left + vWidth) - 10;
                 const top = (rect.top + vHeight);
 
                 const width = rect.width + (rect.width * 0.5);
 
-                const right = (left + width);
-                const widthPassed = right - window.innerWidth;
+                // const right = (left + width);
+                // const widthPassed = right - window.innerWidth;
 
-                //left = left - 10;
-
-                //console.log('left', left, 'rect.left', rect.left);
-                
-                // if (left < 100) {
-                //     left = 100;
+                // if (right > window.innerWidth) {
+                //     left -= (widthPassed * 0.5);
                 // }
-                // if (left < rect.left) {
-                //     left = rect.left + 100;
-                // }
-
-                if (right > window.innerWidth) {
-                    left -= (widthPassed * 0.5);
-                }
 
                 miniPreviewbox.style.width = `${width}px`;
     
@@ -136,14 +133,18 @@ export const buildMiniPreviews = () => {
             //setTimeout(videoController.playVideo, 1500);
         });
 
-        item.addEventListener('mouseleave', () => {
-            miniPreviewbox.dataset.videoEnded = 1;
+        item.addEventListener('mouseleave', (e) => {
             clearTimeout(timeout);  
             clearTimeout(timeout2);
         });
     });
 
-    miniPreviewbox.addEventListener('mouseleave', () => closeMiniPreviewBox());
+    miniPreviewbox.addEventListener('mouseleave', () => {
+        //console.log(e.target);
+        miniPreviewbox.classList.remove('corner-start', 'corner-end');
+        miniPreviewbox.dataset.videoEnded = 1;
+        closeMiniPreviewBox();
+    });
 }
 
 (() => {

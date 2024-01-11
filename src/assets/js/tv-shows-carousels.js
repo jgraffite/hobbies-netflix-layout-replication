@@ -5,26 +5,18 @@ export const initCarousels = () => {
     const sliders = [];
     const sliderElementsQuery = '.tv-show-carousel';
 
-    const onNavigated = (sliderElement, slider, index) => {
-        
-        if (window.matchMedia("(max-width: 575px)").matches || sliderElement.closest('div[class$="__slider-wrapper"]').dataset.refreshed) {
-            return false;
-        }
+    const findOutCorneredElements = (sliderElement) => {
+        const nthItem = sliderElement.querySelector('.tns-slide-cloned') ? 2 : 1;
+        sliderElement.querySelectorAll('.corner-start, corner-end').forEach(elem => elem?.classList.remove('corner-start', 'corner-end'));
+        sliderElement.querySelector(`.tns-item:nth-child(${nthItem} of .tns-slide-active)`)?.classList.add('corner-start');
+        sliderElement.querySelector(`.tns-item:nth-last-child(2 of .tns-slide-active)`)?.classList.add('corner-end');
+    }
 
-        sliderElement.dataset.refreshed = "1";
-        sliderElement.closest('div[class$="__slider-wrapper"]').dataset.refreshed = "1";
-        setTimeout(() => {
-            sliders[index].destroy();
-            sliders[index] = initSlider(
-                document.querySelectorAll(sliderElementsQuery)[index],
-                index,
-                {
-                    loop: true,
-                },
-            );
-            sliders[index]?.goTo('next');
-        }, 1000);
-            
+    const onNavigated = (sliderElement, slider, index) => {
+
+        findOutCorneredElements(sliderElement);
+
+        sliderElement.closest('div[class$="__slider-wrapper"]').dataset.navigated = "1";  
     };
 
     const attachNavButtons = (sliderElement, index) => {
@@ -58,23 +50,24 @@ export const initCarousels = () => {
             dots: false,
             nav: true,
             controls: false,
-            loop: false,
+            loop: true,
             responsive: {
                 320: {
                     edgePadding: 0,
                     items: 2,
-                    slideBy: 2,
                     slideBy: 1,
                     mouseDrag: true,
                     loop: false,
                 },
                 768: {
                     edgePadding: 55,
+                    mouseDrag: false,
                     items: 6,
                     slideBy: 6,
+                    loop: true,
                 },
                 992: {
-                    edgePadding: 55,
+                    edgePadding: 35,
                     items: 6,
                     slideBy: 6,
                 },
@@ -99,7 +92,8 @@ export const initCarousels = () => {
 
         attachNavButtons(sliderElement, index);
         buildMiniPreviews();
-        slider.events.on('indexChanged', (e) => {console.log('e', e); onNavigated(sliderElement, slider, index); });
+        findOutCorneredElements(sliderElement);
+        slider.events.on('indexChanged', () => onNavigated(sliderElement, slider, index));
         return slider;
     }
 

@@ -11,7 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
     border-radius: 10px;
     overflow: hidden;
-    transform: scale(.671);
+    transform: scale(.671) translate(0px);
     transition-property: transform, opacity, margin-top, margin-left;
     transition-duration: .5s, .5s, .5s, .5s;
     transition-delay: 0, 5.9s, 0, 0;
@@ -26,6 +26,14 @@
     &.showed {
         margin-top: -120px;
         transform: scale(1);
+
+        &.corner-start {
+            transform: translateX(50px) scale(1);
+        }
+
+        &.corner-end {
+            transform: translateX(-50px) scale(1);
+        }
     }
 
     &[data-video-ended="1"] {

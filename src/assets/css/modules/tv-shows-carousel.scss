@@ -112,8 +112,10 @@
         flex-flow: row;
         align-items: center;
 
-        &:not([data-refreshed="1"]) [class*="__nav-prev"] {
-            visibility: hidden;
+        &:not([data-navigated="1"]) {
+            .tns-slide-cloned.tns-slide-active, [class*="__nav-prev"] {
+                visibility: hidden;
+            }
         }
 
         &:hover .tns-nav {
@@ -249,6 +251,10 @@
                 @media #{$sm} {
                     border-radius: 5px;
                     margin-right: 5px;
+                }
+
+                &:nth-child(2 of .tns-slide-active) {
+                    //transform: translateX(57px) translateY(0px) scaleX(1) scaleY(1) translateZ(0px);
                 }
 
                 img {
