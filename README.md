@@ -1,5 +1,8 @@
 # Netflix - Replicação HTML de Layout / Layout Replication in HTML
 
+![image](https://github.com/jgraffite/hobbies-netflix-layout-replication/assets/5160859/836c4521-dd06-48bd-b5eb-9c2b57f9d23c)
+
+
 ### Sobre o projeto / About the project
 
 Esse projeto é uma replicação pura de HTML/Javascript/CSS do layout da página inicial do [Netflix](http://www.netflix.com "Netflix") contendo todos os seus efeitos e funcionalidades visuais, reprodução rápida de vídeos com trailers das séries listadas neste replicação.
