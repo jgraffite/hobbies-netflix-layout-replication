@@ -2,9 +2,9 @@
 
 ### Sobre o projeto / About the project
 
-Esse projeto é uma replicação pura de HTML/Javascript/CSS do layout da página inicial do [Netflix](http://www.netflix.com "Netflix") contendo todas os seus efeitos e funcionalidades visuais, reprodução rápida de vídeos com trailers das séries listadas neste replicação.
+Esse projeto é uma replicação pura de HTML/Javascript/CSS do layout da página inicial do [Netflix](http://www.netflix.com "Netflix") contendo todos os seus efeitos e funcionalidades visuais, reprodução rápida de vídeos com trailers das séries listadas neste replicação.
 
-Observação: A função deste projeto é de somente replicar os elementos visuais e funcionaliddes visuais básicas da página inicial, não estendendo à funcionalidades de busca por séries, categorização, reprodução de episódios e outras funcionalidades exclusivas do site/aplicativo da Netflix.
+Observação: A objetivo deste projeto é de somente replicar os elementos visuais e funcionaliddes visuais básicas da página inicial, não estendendo à funcionalidades de busca por séries, categorização, reprodução de episódios e outras funcionalidades exclusivas do site/aplicativo da Netflix.
 
 ------------
 
@@ -24,9 +24,9 @@ Observação: A função deste projeto é de somente replicar os elementos visua
 - *Netflix website visual fidelity;*
 - *The images (tv shows thumbs) was get from the Netflix website and covers from some promotion websites;*
 - *The icons displayed are from the library [FontAwesome](http://fontawesome.com "FontAwesome") in its free version. This is why some icons are displayed a bit different from those displayed in the Netflix website;*
-- *The used fonts was the universals and free by Google Fonts. This is why will be possible see some visual differences.*
+- *The used fonts was the universals and free by Google Fonts. This is why it will be possible to see some visual differences.*
 
-###Rodando a aplicação / Running the project
+### Rodando a aplicação / Running the project
 
 Para levantar a aplicação, basta copiar e colar o comando abaixo no seu terminal:
 
@@ -65,6 +65,5 @@ Ainda assim você pode optar por usar a tag `<video>` e o vídeo disponibilizado
 Você pode conferir a demonstração deste repositório online neste link: [Demonstração / Demo](https://jgraffite.github.io/netflix-layout-replication/html/)
 
 ------------
-
 
 *You can see this project running on this link: [Demonstração / Demo](https://jgraffite.github.io/netflix-layout-replication/html/)*
