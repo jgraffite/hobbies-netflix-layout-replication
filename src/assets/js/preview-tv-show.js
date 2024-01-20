@@ -56,8 +56,11 @@ export const openPreviewModal = (elem) => {
     previewModalWrapper.scrollTo({top: 0});
     previewModalBox.querySelector('img.cover').src = elem.querySelector('img').src.replace(/(vertical-)/g, '');
     previewModalBox.querySelector('img.logo').src = previewModalBox.querySelector('img.cover').src.replace(/(thumbs)/g, 'logos').replace(/(\.jpg)/g, '.webp').replace(/(-alt)/g, '');
-    setTimeout(() => videoController.loadVideoById(elem.dataset.videoId), 1000);
-    setMuted(true);
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        setTimeout(() => videoController.loadVideoById(elem.dataset.videoId), 1000);
+        setMuted(true);
+    }
 }
 
 export const closePreviewModal = () => {
@@ -83,5 +86,12 @@ export const closePreviewModal = () => {
     volumeControl.addEventListener('click', (e) => {
         videoController.playVideo();
         toggleMuted();
+    });
+
+    /**
+     * Close Button
+     */
+    previewModalBox.querySelector('.close-button').addEventListener('click', (e) => {
+        closePreviewModal();
     });
 })();

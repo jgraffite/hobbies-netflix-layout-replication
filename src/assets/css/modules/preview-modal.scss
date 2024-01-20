@@ -83,6 +83,29 @@
             height: auto;
         }
 
+        &__close-box {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+            button {
+                margin-right: 15px;
+                margin-top: 15px;
+                cursor: pointer;
+                height: 2vw;
+                width: 2vw;
+                background-color: $netflix-black !important;
+                color: white;
+                border-color: transparent;
+
+                i {
+                    color: white !important;
+                }
+            }
+        }
+
         &__placeholder {
             height: 100%;
 
@@ -116,15 +139,19 @@
                 top: 0;
                 transition: opacity .5s;
                 margin-top: -10px;
+
+                @media #{$xs} {
+                    height: 110%;
+                }
             }
 
             &__img {
                 //max-height: 100%;
                 width: 100vw;
 
-                @media #{$xs} {
-                    display: none;
-                }
+                // @media #{$xs} {
+                //     display: none;
+                // }
 
                 @media #{$md} {
                     width: 100%;
@@ -134,7 +161,7 @@
             &__bottom-shadow {
                 //--dark-color: red;
                 --tranparency-height: 50%;
-                margin-top: -60px;
+                margin-top: -100px;
                 height: 30vh;
                 width: 100%;
                 position: relative;
