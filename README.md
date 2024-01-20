@@ -1,4 +1,4 @@
-#Netflix - Replicação HTML de Layout / Layout Replication in HTML
+# Netflix - Replicação HTML de Layout / Layout Replication in HTML
 
 ### Sobre o projeto / About the project
 
@@ -60,7 +60,7 @@ Ainda assim você pode optar por usar a tag `<video>` e o vídeo disponibilizado
 [/index.html - line 594](index.html#L594 "/index.html")
 [/index.html - line 829](index.html#L829 "/index.html")
 
-###Links
+### Links
 
 Você pode conferir a demonstração deste repositório online neste link: [Demonstração / Demo](https://jgraffite.github.io/netflix-layout-replication/html/)
 
