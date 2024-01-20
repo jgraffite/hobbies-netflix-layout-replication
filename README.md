@@ -43,9 +43,9 @@ A [Youtube Player API](https://developers.google.com/youtube/iframe_api_referenc
 
 Ainda assim você pode optar por usar a tag `<video>` e o vídeo disponibilizado nesse repositório, bastando somente descomentar as seguintes linhas, comentando a que logo a sucede:
 
-[/index.html - linha 99](index.html#L99 "/index.html")
-[/index.html - linha 594](index.html#L594 "/index.html")
-[/index.html - linha 829](index.html#L829 "/index.html")
+- [/index.html - linha 99](index.html#L99 "/index.html")
+- [/index.html - linha 594](index.html#L594 "/index.html")
+- [/index.html - linha 829](index.html#L829 "/index.html")
 
 ------------
 
@@ -56,9 +56,9 @@ Ainda assim você pode optar por usar a tag `<video>` e o vídeo disponibilizado
 
 *Even though, you can opt in for use the tag `<video>` and set it to the .mp4 video available in this repository, just uncomment the following lines, commenting the subsequent line:*
 
-[/index.html - line 99](index.html#L99 "/index.html")
-[/index.html - line 594](index.html#L594 "/index.html")
-[/index.html - line 829](index.html#L829 "/index.html")
+- [/index.html - linha 99](index.html#L99 "/index.html")
+- [/index.html - linha 594](index.html#L594 "/index.html")
+- [/index.html - linha 829](index.html#L829 "/index.html")
 
 ### Links
 
